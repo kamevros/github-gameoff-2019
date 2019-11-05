@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sovereign-quarter-by-kevin-macleod.ogg-ab3adbcfc6ee869508542e64bb7d78f2.oggstr"
+
+[deps]
+
+source_file="res://main_menu/assets/sounds/sovereign-quarter-by-kevin-macleod.ogg"
+dest_files=[ "res://.import/sovereign-quarter-by-kevin-macleod.ogg-ab3adbcfc6ee869508542e64bb7d78f2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
