@@ -1,2 +1,2 @@
-# night-san-lorenzo
-Game for Github Gameoff 2019 - Leaps and Bounds
+# The night of San Lorenzo 
+### Around a Campfire
