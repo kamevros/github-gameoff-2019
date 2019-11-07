@@ -8,15 +8,22 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "PlayerGoat",
+"language": "GDScript",
+"path": "res://climbing_scene/scripts/Gustaf.gd"
+} ]
 _global_script_class_icons={
-
+"PlayerGoat": ""
 }
 
 [application]
 
 config/name="Around a Campfire"
 run/main_scene="res://main_menu/scenes/MenuScene.tscn"
+boot_splash/image="res://kamevros.png"
+boot_splash/bg_color=Color( 0.329412, 0.301961, 0.301961, 1 )
 config/icon="res://icon.png"
 
 [debug]
@@ -25,9 +32,8 @@ shapes/collision/shape_color=Color( 0, 0.6, 0.701961, 0.501961 )
 
 [display]
 
-window/size/width=800
-window/size/height=800
-window/size/resizable=false
+window/size/width=480
+window/size/height=480
 
 [importer_defaults]
 

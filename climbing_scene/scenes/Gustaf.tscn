@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://climbing_scene/scripts/Gustaf.gd" type="Script" id=1]
+[ext_resource path="res://climbing_scene/assets/resources/goat_spriteframes.tres" type="SpriteFrames" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.2796
+height = 11.1852
+
+[node name="Gustaf" type="KinematicBody2D"]
+position = Vector2( 240, 451 )
+script = ExtResource( 1 )
+jump_speed = 350
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 0, -80 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_right = 480
+limit_bottom = 510
+smoothing_speed = 2.0
+drag_margin_bottom = 0.1
+editor_draw_limits = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 2 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.352142, 2.25003 )
+scale = Vector2( 1.56, 1 )
+shape = SubResource( 1 )
