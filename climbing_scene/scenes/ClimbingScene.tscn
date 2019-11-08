@@ -22,18 +22,12 @@
 0/autotile/z_index_map = [  ]
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 0.0,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="PhysicsMaterial" id=5]
+[sub_resource type="PhysicsMaterial" id=2]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 254.924, 10 )
 
 [node name="ClimbingScene" type="Node"]
@@ -65,13 +59,13 @@ editor/display_folded = true
 
 [node name="Ground" type="StaticBody2D" parent="World"]
 position = Vector2( 10.2093, 490.071 )
-physics_material_override = SubResource( 5 )
+physics_material_override = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ground"]
 position = Vector2( 229.538, -0.681122 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Gustaf" parent="." instance=ExtResource( 6 )]
