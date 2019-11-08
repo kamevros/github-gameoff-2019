@@ -24,21 +24,24 @@ const GRAVITY_SPEED : int = 1300
 var direction : = Vector2()
 var velocity : = Vector2()
 var can_jump : bool = false
+var anim : String = "idle"
 
 
 func _ready() -> void:
-	sprite.play("idle")
+	sprite.play(anim)
 
 
-func _physics_process(delta : float) -> void:
-	velocity = move_and_slide(velocity, Vector2.UP)
-
+func _process(delta : float) -> void:
+	var new_anim : String = "idle"
+	
 	direction = get_input()
 
 	if direction.x != 0:
 		velocity.x = lerp(velocity.x, direction.x * walk_speed, acceleration)
+		new_anim = "walk"
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
+		
 	
 	position.x = clamp(position.x, 
 		$Camera.limit_left,
@@ -49,6 +52,7 @@ func _physics_process(delta : float) -> void:
 			velocity.y = -jump_speed
 			current_state = PLAYER_STATE.FALLING
 			can_jump = false
+			new_anim = "jump"
 		PLAYER_STATE.FALLING:
 			velocity.y += GRAVITY_SPEED * delta
 			if is_on_floor():
@@ -59,6 +63,19 @@ func _physics_process(delta : float) -> void:
 			velocity.y += GRAVITY_SPEED * delta
 			if !is_on_floor() :
 				current_state = PLAYER_STATE.FALLING
+				
+	if anim != new_anim:
+		sprite.play(new_anim)
+		
+		if sprite.animation == "jump":
+			yield( sprite, "animation_finished" )
+			anim = new_anim
+		else:
+			anim = new_anim
+
+
+func _physics_process(delta : float) -> void:
+	velocity = move_and_slide(velocity, Vector2.UP)
 
 
 func get_input() -> Vector2:
@@ -86,3 +103,5 @@ func slip(is_slippery : bool) -> void:
 		acceleration = base_acceleration
 		friction = base_friction
 	
+
+

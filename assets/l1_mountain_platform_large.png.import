@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/p0_goat_idle_1.png-c88978f2447bdcb85bbb46ed2b6750a2.stex"
+path="res://.import/l1_mountain_platform_large.png-d3ceb205bf1e7e93cc1e38adbb603153.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/p0_goat_idle_1.png"
-dest_files=[ "res://.import/p0_goat_idle_1.png-c88978f2447bdcb85bbb46ed2b6750a2.stex" ]
+source_file="res://assets/l1_mountain_platform_large.png"
+dest_files=[ "res://.import/l1_mountain_platform_large.png-d3ceb205bf1e7e93cc1e38adbb603153.stex" ]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
-svg/scale=3.0
+detect_3d=true
+svg/scale=1.0

@@ -1,12 +1,34 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=2]
+[gd_resource type="SpriteFrames" load_steps=10 format=2]
 
 [ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=1]
 [ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/p0_goat_jump_0.png" type="Texture" id=3]
+[ext_resource path="res://assets/p0_goat_jump_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/p0_goat_jump_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/p0_goat_sit_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/p0_goat_sit_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/p0_goat_walk_0.png" type="Texture" id=8]
+[ext_resource path="res://assets/p0_goat_walk_1.png" type="Texture" id=9]
 
 [resource]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "jump",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "sit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
