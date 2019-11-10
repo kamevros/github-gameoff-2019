@@ -7,10 +7,10 @@
 friction = 0.0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.42439, 5.09247 )
+extents = Vector2( 18.9505, 11.0196 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 8.3513, 5.30951 )
+extents = Vector2( 19.0967, 5.7941 )
 
 [node name="IceLargePlatform" type="StaticBody2D" groups=[
 "slippery",
@@ -26,7 +26,7 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 0 )
+position = Vector2( 0.938568, 0.950256 )
 shape = SubResource( 2 )
 one_way_collision = true
 
@@ -34,6 +34,7 @@ one_way_collision = true
 position = Vector2( 0.5, -11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlipperyArea"]
+position = Vector2( 0.584763, -5.3364 )
 shape = SubResource( 3 )
 [connection signal="body_entered" from="SlipperyArea" to="." method="_on_SlipperyArea_body_entered"]
 [connection signal="body_exited" from="SlipperyArea" to="." method="_on_SlipperyArea_body_exited"]

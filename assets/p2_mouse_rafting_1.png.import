@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/l1_mountain.png-d0ba6711acb10a2380404160c212a2ab.stex"
+path="res://.import/p2_mouse_rafting_1.png-bdfb5c8d1fe88160128d01af23e8b32a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/l1_mountain.png"
-dest_files=[ "res://.import/l1_mountain.png-d0ba6711acb10a2380404160c212a2ab.stex" ]
+source_file="res://assets/p2_mouse_rafting_1.png"
+dest_files=[ "res://.import/p2_mouse_rafting_1.png-bdfb5c8d1fe88160128d01af23e8b32a.stex" ]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

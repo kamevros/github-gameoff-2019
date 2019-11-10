@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/l1_mountain_10x.png-b39b5e86b26481c59d067a6367dfa8a3.stex"
+path="res://.import/l0_gameover.png-3397718d58bf2d607bfb5814467a2b96.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/l1_mountain_10x.png"
-dest_files=[ "res://.import/l1_mountain_10x.png-b39b5e86b26481c59d067a6367dfa8a3.stex" ]
+source_file="res://assets/l0_gameover.png"
+dest_files=[ "res://.import/l0_gameover.png-3397718d58bf2d607bfb5814467a2b96.stex" ]
 
 [params]
 

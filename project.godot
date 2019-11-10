@@ -10,12 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
-"class": "PlayerGoat",
+"class": "PlayerGoatFixedJump",
 "language": "GDScript",
-"path": "res://climbing_scene/scripts/Gustaf.gd"
+"path": "res://climbing_scene/scripts/GustafFixedJump.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerGoatFreeJump",
+"language": "GDScript",
+"path": "res://climbing_scene/scripts/GustafFreeJump.gd"
 } ]
 _global_script_class_icons={
-"PlayerGoat": ""
+"PlayerGoatFixedJump": "",
+"PlayerGoatFreeJump": ""
 }
 
 [application]
@@ -26,6 +32,10 @@ boot_splash/image="res://kamevros.png"
 boot_splash/bg_color=Color( 0.329412, 0.301961, 0.301961, 1 )
 config/icon="res://icon.png"
 
+[autoload]
+
+scene_manager="*res://globals/scene_manager.gd"
+
 [debug]
 
 shapes/collision/shape_color=Color( 0, 0.6, 0.701961, 0.501961 )
@@ -34,6 +44,8 @@ shapes/collision/shape_color=Color( 0, 0.6, 0.701961, 0.501961 )
 
 window/size/width=480
 window/size/height=480
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 

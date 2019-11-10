@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/l1_mountain.png-d3a08d3f6e2e19df997b6620b978c590.stex"
+path="res://.import/p0_goa_fall_0.png-27cfb58e348791b38f3ab804f147b48e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://climbing_scene/assets/images/l1_mountain.png"
-dest_files=[ "res://.import/l1_mountain.png-d3a08d3f6e2e19df997b6620b978c590.stex" ]
+source_file="res://assets/p0_goa_fall_0.png"
+dest_files=[ "res://.import/p0_goa_fall_0.png-27cfb58e348791b38f3ab804f147b48e.stex" ]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
