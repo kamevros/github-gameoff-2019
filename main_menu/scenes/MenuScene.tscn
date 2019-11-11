@@ -1,8 +1,103 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://main_menu/scripts/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://main_menu/assets/sounds/sovereign-quarter-by-kevin-macleod.ogg" type="AudioStream" id=2]
-[ext_resource path="res://main_menu/assets/images/placeholder_main_menu.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/l0_camp.png" type="Texture" id=3]
+[ext_resource path="res://assets/l0_tent_flare_0.png" type="Texture" id=4]
+[ext_resource path="res://assets/l0_tent_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/l0_tent_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/l0_tent_flare_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/l0_title.png" type="Texture" id=8]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=9]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=10]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=11]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=12]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=13]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=14]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=15]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=16]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=17]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.0117647, 0.00392157, 0.172549, 1, 0.321569, 0, 0.121569, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 480
+
+[sub_resource type="TileSet" id=7]
+0/name = "l0_camp.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 144, 144 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 48, 48 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
 
 [node name="MenuScene" type="Node"]
 script = ExtResource( 1 )
@@ -13,7 +108,59 @@ autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Placeholder" type="Sprite" parent="CanvasLayer"]
-scale = Vector2( 0.204182, 0.210896 )
-texture = ExtResource( 3 )
-centered = false
+[node name="background" type="Node2D" parent="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/background"]
+margin_right = 480.0
+margin_bottom = 480.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource( 2 )
+stretch_mode = 2
+
+[node name="TileMap" type="TileMap" parent="CanvasLayer/background"]
+tile_set = SubResource( 7 )
+cell_size = Vector2( 48, 48 )
+format = 1
+tile_data = PoolIntArray( 458752, 0, 65536, 458753, 0, 2, 458754, 0, 1, 458755, 0, 0, 458756, 0, 0, 458757, 0, 1, 458758, 0, 65536, 458759, 0, 1, 458760, 0, 2, 458761, 0, 0, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65538, 524291, 0, 65537, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65538, 524297, 0, 65538, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131074, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131074, 589833, 0, 131073 )
+
+[node name="tent1" type="AnimatedSprite" parent="CanvasLayer/background"]
+position = Vector2( 343, 360 )
+frames = SubResource( 8 )
+frame = 1
+flip_h = true
+
+[node name="tent2" type="AnimatedSprite" parent="CanvasLayer/background"]
+position = Vector2( 295, 360 )
+frames = SubResource( 9 )
+flip_h = true
+
+[node name="title" type="AnimatedSprite" parent="CanvasLayer/background"]
+position = Vector2( 246, 240 )
+frames = SubResource( 10 )
+
+[node name="characters" type="Node2D" parent="CanvasLayer"]
+
+[node name="fire" type="AnimatedSprite" parent="CanvasLayer/characters"]
+position = Vector2( 230, 360 )
+frames = SubResource( 3 )
+frame = 2
+playing = true
+
+[node name="beatrix" type="AnimatedSprite" parent="CanvasLayer/characters"]
+position = Vector2( 190, 360 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="gustaf" type="AnimatedSprite" parent="CanvasLayer/characters"]
+position = Vector2( 270, 360 )
+frames = SubResource( 5 )
+playing = true
+flip_h = true
+
+[node name="remy" type="AnimatedSprite" parent="CanvasLayer/characters"]
+position = Vector2( 166, 360 )
+frames = SubResource( 6 )
+playing = true

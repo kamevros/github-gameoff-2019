@@ -32,6 +32,7 @@
 extents = Vector2( 254.924, 10 )
 
 [node name="ClimbingScene" type="Node2D"]
+editor/display_folded = true
 position = Vector2( 0, 3559.16 )
 
 [node name="TileMap" type="TileMap" parent="."]
