@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "PlayerGoatFreeJump",
 "language": "GDScript",
 "path": "res://climbing_scene/scripts/GustafFreeJump.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerMouse",
+"language": "GDScript",
+"path": "res://rafting_scene/scripts/Remy.gd"
 } ]
 _global_script_class_icons={
 "PlayerGoatFixedJump": "",
-"PlayerGoatFreeJump": ""
+"PlayerGoatFreeJump": "",
+"PlayerMouse": ""
 }
 
 [application]

@@ -40,6 +40,7 @@ height = 29.2483
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 0, 480 )
 
 [node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer"]
 tile_set = SubResource( 1 )
@@ -48,7 +49,6 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 0, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65537, 7, 0, 65537, 8, 0, 65537, 9, 0, 2, 65536, 0, 0, 65537, 0, 65537, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 65544, 0, 65537, 65545, 0, 2, 131072, 0, 0, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65537, 131078, 0, 65537, 131079, 0, 65537, 131080, 0, 65537, 131081, 0, 2, 196608, 0, 0, 196609, 0, 65537, 196610, 0, 131073, 196611, 0, 65537, 196612, 0, 65537, 196613, 0, 65537, 196614, 0, 65537, 196615, 0, 131073, 196616, 0, 65537, 196617, 0, 2, 262144, 0, 0, 262145, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 65537, 262152, 0, 65537, 262153, 0, 2, 327680, 0, 0, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 65537, 327684, 0, 65537, 327685, 0, 65537, 327686, 0, 65537, 327687, 0, 65537, 327688, 0, 65537, 327689, 0, 2, 393216, 0, 0, 393217, 0, 131073, 393218, 0, 65537, 393219, 0, 65537, 393220, 0, 65537, 393221, 0, 65537, 393222, 0, 65537, 393223, 0, 65537, 393224, 0, 65537, 393225, 0, 131074, 458752, 0, 0, 458753, 0, 65537, 458754, 0, 131073, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 131073, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537, 458761, 0, 2, 524288, 0, 0, 524289, 0, 65537, 524290, 0, 65537, 524291, 0, 65537, 524292, 0, 65537, 524293, 0, 65537, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65537, 524297, 0, 2, 589824, 0, 0, 589825, 0, 65537, 589826, 0, 65537, 589827, 0, 65537, 589828, 0, 65537, 589829, 0, 65537, 589830, 0, 65537, 589831, 0, 65537, 589832, 0, 65537, 589833, 0, 131073 )
 
 [node name="Remy" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 240, 240 )
 script = ExtResource( 2 )
 
@@ -59,6 +59,10 @@ animation = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Remy"]
 shape = SubResource( 3 )
 
+[node name="HorizontalMovementTween" type="Tween" parent="Remy"]
+
+[node name="VerticalMovementTween" type="Tween" parent="Remy"]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 240, 240 )
 current = true
@@ -66,3 +70,5 @@ drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 editor_draw_limits = true
 editor_draw_drag_margin = true
+[connection signal="tween_all_completed" from="Remy/HorizontalMovementTween" to="Remy" method="_on_HorizontalMovementTween_tween_all_completed"]
+[connection signal="tween_all_completed" from="Remy/VerticalMovementTween" to="Remy" method="_on_VerticalMovementTween_tween_all_completed"]
