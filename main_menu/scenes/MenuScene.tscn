@@ -4,8 +4,8 @@
 [ext_resource path="res://main_menu/assets/sounds/sovereign-quarter-by-kevin-macleod.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/l0_camp.png" type="Texture" id=3]
 [ext_resource path="res://outline_shader.tres" type="Material" id=4]
-[ext_resource path="res://assets/l0_tent_unique_0.png" type="Texture" id=5]
-[ext_resource path="res://assets/l0_tent_unique_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/l0_tent_quechua_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/l0_tent_quechua_2.png" type="Texture" id=6]
 [ext_resource path="res://assets/l0_title.png" type="Texture" id=7]
 [ext_resource path="res://main_menu/assets/images/arrow.png" type="Texture" id=8]
 [ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=9]
@@ -36,7 +36,7 @@ width = 480
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 144, 144 )
+0/region = Rect2( 0, 0, 144, 192 )
 0/tile_mode = 2
 0/autotile/icon_coordinate = Vector2( 0, 0 )
 0/autotile/tile_size = Vector2( 48, 48 )
@@ -54,12 +54,12 @@ animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 2.0
 } ]
 
 [sub_resource type="SpriteFrames" id=5]
@@ -185,13 +185,14 @@ stretch_mode = 2
 tile_set = SubResource( 3 )
 cell_size = Vector2( 48, 48 )
 format = 1
-tile_data = PoolIntArray( 458752, 0, 65536, 458753, 0, 2, 458754, 0, 1, 458755, 0, 0, 458756, 0, 0, 458757, 0, 1, 458758, 0, 65536, 458759, 0, 1, 458760, 0, 2, 458761, 0, 0, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65538, 524291, 0, 65537, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65538, 524297, 0, 65538, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131074, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131074, 589833, 0, 131073 )
+tile_data = PoolIntArray( 458752, 0, 196609, 458753, 0, 196610, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 1, 458758, 0, 65536, 458759, 0, 0, 458760, 0, 196608, 458761, 0, 196609, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65538, 524291, 0, 65537, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65538, 524297, 0, 65538, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131074, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131074, 589833, 0, 131073 )
 
 [node name="Tent" type="AnimatedSprite" parent="Background"]
 material = ExtResource( 4 )
 position = Vector2( 312, 360 )
 frames = SubResource( 4 )
 animation = "idle"
+playing = true
 flip_h = true
 
 [node name="Title" type="AnimatedSprite" parent="Background"]
@@ -210,21 +211,19 @@ flip_h = true
 [node name="Fire" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 230, 360 )
 frames = SubResource( 6 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Beatrix" type="AnimatedSprite" parent="Characters"]
 material = SubResource( 8 )
 position = Vector2( 190, 360 )
 frames = SubResource( 9 )
-frame = 1
 playing = true
 
 [node name="Gustaf" type="AnimatedSprite" parent="Characters"]
 material = SubResource( 10 )
 position = Vector2( 270, 360 )
 frames = SubResource( 11 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -232,4 +231,5 @@ flip_h = true
 material = SubResource( 12 )
 position = Vector2( 166, 360 )
 frames = SubResource( 13 )
+frame = 1
 playing = true
