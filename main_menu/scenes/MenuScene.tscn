@@ -1,38 +1,36 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://main_menu/scripts/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://main_menu/assets/sounds/sovereign-quarter-by-kevin-macleod.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/l0_camp.png" type="Texture" id=3]
-[ext_resource path="res://assets/l0_tent_flare_0.png" type="Texture" id=4]
-[ext_resource path="res://assets/l0_tent_0.png" type="Texture" id=5]
-[ext_resource path="res://assets/l0_tent_1.png" type="Texture" id=6]
-[ext_resource path="res://assets/l0_tent_flare_1.png" type="Texture" id=7]
-[ext_resource path="res://assets/l0_title.png" type="Texture" id=8]
-[ext_resource path="res://main_menu/assets/images/arrow.png" type="Texture" id=9]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=10]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=11]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=12]
-[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=13]
-[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=14]
-[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=15]
-[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=16]
-[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=17]
-[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=18]
-[ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=19]
-[ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=20]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=21]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=22]
-[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=23]
-[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=24]
+[ext_resource path="res://outline_shader.tres" type="Material" id=4]
+[ext_resource path="res://assets/l0_tent_unique_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/l0_title.png" type="Texture" id=6]
+[ext_resource path="res://main_menu/assets/images/arrow.png" type="Texture" id=7]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=8]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=9]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=10]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=11]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=12]
+[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=13]
+[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=14]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=15]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=17]
+[ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=18]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=19]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=20]
+[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=21]
+[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=22]
 
-[sub_resource type="Gradient" id=12]
+[sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.0117647, 0.00392157, 0.172549, 1, 0.321569, 0, 0.121569, 1 )
 
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 width = 480
 
-[sub_resource type="TileSet" id=14]
+[sub_resource type="TileSet" id=3]
 0/name = "l0_camp.png 0"
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
@@ -52,37 +50,34 @@ width = 480
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
-"speed": 2.0
-} ]
-
-[sub_resource type="SpriteFrames" id=16]
-animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "default",
-"speed": 2.0
+"name": "idle",
+"speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=11]
+[sub_resource type="Shader" id=8]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -111,55 +106,55 @@ void fragment()
     COLOR = vec4(tcol.rgb, tcol.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=19]
-shader = SubResource( 11 )
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
 shader_param/outLineSize = 0.05
 shader_param/alpha = 0.0
 
-[sub_resource type="SpriteFrames" id=20]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+}, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "default",
+"name": "idle",
 "speed": 2.0
-}, {
+} ]
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 8 )
+shader_param/outLineSize = 0.05
+shader_param/alpha = 0.0
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "idle",
+"name": "default",
 "speed": 2.0
-} ]
-
-[sub_resource type="ShaderMaterial" id=21]
-shader = SubResource( 11 )
-shader_param/outLineSize = 0.05
-shader_param/alpha = 0.0
-
-[sub_resource type="SpriteFrames" id=22]
-animations = [ {
+}, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
-"name": "default",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
 "name": "idle",
 "speed": 2.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=23]
-shader = SubResource( 11 )
+[sub_resource type="ShaderMaterial" id=13]
+shader = SubResource( 8 )
 shader_param/outLineSize = 0.05
 shader_param/alpha = 0.0
 
-[sub_resource type="SpriteFrames" id=24]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -173,71 +168,68 @@ stream = ExtResource( 2 )
 volume_db = -30.0
 autoplay = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Background" type="Node2D" parent="."]
+editor/display_folded = true
 
-[node name="Background" type="Node2D" parent="CanvasLayer"]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Background"]
+[node name="TextureRect" type="TextureRect" parent="Background"]
 margin_right = 480.0
 margin_bottom = 480.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = SubResource( 13 )
+texture = SubResource( 2 )
 stretch_mode = 2
 
-[node name="TileMap" type="TileMap" parent="CanvasLayer/Background"]
-tile_set = SubResource( 14 )
+[node name="TileMap" type="TileMap" parent="Background"]
+tile_set = SubResource( 3 )
 cell_size = Vector2( 48, 48 )
 format = 1
 tile_data = PoolIntArray( 458752, 0, 65536, 458753, 0, 2, 458754, 0, 1, 458755, 0, 0, 458756, 0, 0, 458757, 0, 1, 458758, 0, 65536, 458759, 0, 1, 458760, 0, 2, 458761, 0, 0, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65538, 524291, 0, 65537, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65538, 524297, 0, 65538, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131074, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131074, 589833, 0, 131073 )
 
-[node name="Tent1" type="AnimatedSprite" parent="CanvasLayer/Background"]
-position = Vector2( 343, 360 )
+[node name="Tent" type="AnimatedSprite" parent="Background"]
+material = ExtResource( 4 )
+position = Vector2( 312, 360 )
 frames = SubResource( 15 )
-frame = 1
+animation = "idle"
 flip_h = true
 
-[node name="Tent2" type="AnimatedSprite" parent="CanvasLayer/Background"]
-position = Vector2( 295, 360 )
-frames = SubResource( 16 )
-flip_h = true
-
-[node name="Title" type="AnimatedSprite" parent="CanvasLayer/Background"]
+[node name="Title" type="AnimatedSprite" parent="Background"]
 position = Vector2( 246, 240 )
-frames = SubResource( 17 )
+frames = SubResource( 6 )
 
-[node name="Characters" type="Node2D" parent="CanvasLayer"]
+[node name="Characters" type="Node2D" parent="."]
 
-[node name="Arrow" type="Sprite" parent="CanvasLayer/Characters"]
+[node name="Arrow" type="Sprite" parent="Characters"]
+visible = false
 position = Vector2( 166, 310 )
-texture = ExtResource( 9 )
+texture = ExtResource( 7 )
 offset = Vector2( -20, 18 )
 flip_h = true
 
-[node name="Fire" type="AnimatedSprite" parent="CanvasLayer/Characters"]
+[node name="Fire" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 230, 360 )
-frames = SubResource( 18 )
+frames = SubResource( 7 )
 frame = 1
 playing = true
 
-[node name="Beatrix" type="AnimatedSprite" parent="CanvasLayer/Characters"]
-material = SubResource( 19 )
+[node name="Beatrix" type="AnimatedSprite" parent="Characters"]
+material = SubResource( 9 )
 position = Vector2( 190, 360 )
-frames = SubResource( 20 )
+frames = SubResource( 10 )
+frame = 1
 playing = true
 
-[node name="Gustaf" type="AnimatedSprite" parent="CanvasLayer/Characters"]
-material = SubResource( 21 )
+[node name="Gustaf" type="AnimatedSprite" parent="Characters"]
+material = SubResource( 11 )
 position = Vector2( 270, 360 )
-frames = SubResource( 22 )
+frames = SubResource( 12 )
+frame = 1
 playing = true
 flip_h = true
 
-[node name="Remy" type="AnimatedSprite" parent="CanvasLayer/Characters"]
-material = SubResource( 23 )
+[node name="Remy" type="AnimatedSprite" parent="Characters"]
+material = SubResource( 13 )
 position = Vector2( 166, 360 )
-frames = SubResource( 24 )
-frame = 1
+frames = SubResource( 14 )
 playing = true

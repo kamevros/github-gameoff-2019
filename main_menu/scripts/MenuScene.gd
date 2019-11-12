@@ -3,15 +3,16 @@ extends Node
 var climbing_scene = "res://climbing_scene/scenes/ClimbingScene.tscn"
 var rafting_scene = "res://rafting_scene/scenes/RaftingScene.tscn"
 var hiking_scene = "res://hiking_scene/scenes/HikingScene.tscn"
+var option_scene = "res://option_scene/scenes/OptionScene.tscn"
 
 export(int, 0, 2) var selector : int = 0
 
-onready var beatrix_sprite : AnimatedSprite = $CanvasLayer/Characters/Beatrix as AnimatedSprite
-onready var gustaf_sprite : AnimatedSprite = $CanvasLayer/Characters/Gustaf as AnimatedSprite
-onready var remy_sprite : AnimatedSprite = $CanvasLayer/Characters/Remy as AnimatedSprite
-onready var arrow : Sprite = $CanvasLayer/Characters/Arrow as Sprite
-onready var selector_array = [remy_sprite, beatrix_sprite, gustaf_sprite]
-onready var scene_array = [rafting_scene, hiking_scene, climbing_scene]
+onready var beatrix_sprite : AnimatedSprite = $Characters/Beatrix as AnimatedSprite
+onready var gustaf_sprite : AnimatedSprite = $Characters/Gustaf as AnimatedSprite
+onready var remy_sprite : AnimatedSprite = $Characters/Remy as AnimatedSprite
+onready var tent_sprite : AnimatedSprite = $Background/Tent as AnimatedSprite
+onready var selector_array = [remy_sprite, beatrix_sprite, gustaf_sprite, tent_sprite]
+onready var scene_array = [rafting_scene, hiking_scene, climbing_scene, option_scene]
 
 var second_counter : float = 0
 
@@ -28,8 +29,6 @@ func _process(delta : float) -> void:
 	for sprite in selector_array:
 		if sprite == selector_array[selector]:
 			sprite.animation = "idle"
-			arrow.position.y = sprite.position.y - 50
-			arrow.position.x = sprite.position.x
 			continue
 		sprite.material.set_shader_param("alpha", 0)
 		sprite.animation = "default"

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/l1_mountain_stavros_v2.png-fee4acf195d47a2c24d77f9dd391d5db.stex"
+path="res://.import/l0_tent_unique_0.png-ad0a22441b7e392558e5ee6f0564f57f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/l1_mountain_stavros_v2.png"
-dest_files=[ "res://.import/l1_mountain_stavros_v2.png-fee4acf195d47a2c24d77f9dd391d5db.stex" ]
+source_file="res://assets/l0_tent_unique_0.png"
+dest_files=[ "res://.import/l0_tent_unique_0.png-ad0a22441b7e392558e5ee6f0564f57f.stex" ]
 
 [params]
 
@@ -24,11 +24,11 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
