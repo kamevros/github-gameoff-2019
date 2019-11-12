@@ -210,18 +210,21 @@ flip_h = true
 [node name="Fire" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 230, 360 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Beatrix" type="AnimatedSprite" parent="Characters"]
 material = SubResource( 8 )
 position = Vector2( 190, 360 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="Gustaf" type="AnimatedSprite" parent="Characters"]
 material = SubResource( 10 )
 position = Vector2( 270, 360 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 flip_h = true
 
@@ -229,5 +232,4 @@ flip_h = true
 material = SubResource( 12 )
 position = Vector2( 166, 360 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
