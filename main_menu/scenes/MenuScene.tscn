@@ -1,9 +1,9 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://main_menu/scripts/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://main_menu/assets/sounds/sovereign-quarter-by-kevin-macleod.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/l0_camp.png" type="Texture" id=3]
-[ext_resource path="res://outline_shader.tres" type="Material" id=4]
+[ext_resource path="res://assets/l0_sign_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/l0_tent_quechua_0.png" type="Texture" id=5]
 [ext_resource path="res://assets/l0_tent_quechua_2.png" type="Texture" id=6]
 [ext_resource path="res://assets/l0_title.png" type="Texture" id=7]
@@ -19,10 +19,11 @@
 [ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=17]
 [ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=18]
 [ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=19]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=20]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=21]
-[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=22]
-[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=23]
+[ext_resource path="res://assets/l0_selection_mountain.png" type="Texture" id=20]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=21]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=22]
+[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=23]
+[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=24]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.0117647, 0.00392157, 0.172549, 1, 0.321569, 0, 0.121569, 1 )
@@ -49,36 +50,7 @@ width = 480
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "default",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "idle",
-"speed": 2.0
-} ]
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="Shader" id=7]
+[sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -107,12 +79,93 @@ void fragment()
     COLOR = vec4(tcol.rgb, tcol.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=8]
-shader = SubResource( 7 )
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
 shader_param/outLineSize = 0.05
 shader_param/alpha = 0.0
 
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = SubResource( 4 )
+shader_param/outLineSize = 0.05
+shader_param/alpha = 0.0
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+} ]
+
 [sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Shader" id=11]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float outLineSize = 0.02;
+uniform float alpha  = 0;
+
+void fragment()
+{
+	vec4 outLineColor = vec4(1.0, 1.0, 1.0, alpha);
+    vec4 tcol = texture(TEXTURE, UV);
+
+    if (tcol.a == 0.0)
+    {
+        if (texture(TEXTURE, UV + vec2(0.0,          outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(0.0,         -outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  0.0)).a          != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, 0.0)).a          != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(-outLineSize, -outLineSize)).a != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  outLineSize)).a  != 0.0 ||
+            texture(TEXTURE, UV + vec2(outLineSize,  -outLineSize)).a != 0.0) 
+            tcol = outLineColor;
+    }
+
+
+    COLOR = vec4(tcol.rgb, tcol.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = SubResource( 11 )
+shader_param/outLineSize = 0.05
+shader_param/alpha = 0.0
+
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
@@ -125,12 +178,12 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=10]
-shader = SubResource( 7 )
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 11 )
 shader_param/outLineSize = 0.05
 shader_param/alpha = 0.0
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
@@ -143,19 +196,51 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=12]
-shader = SubResource( 7 )
+[sub_resource type="Animation" id=16]
+resource_name = "one_shot"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 48, 48 ), Rect2( 48, 0, 48, 48 ), Rect2( 96, 0, 48, 48 ), Rect2( 0, 48, 48, 48 ), Rect2( 48, 48, 48, 48 ), Rect2( 96, 48, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 96, 96, 48, 48 ), Rect2( 0, 144, 48, 48 ), Rect2( 48, 144, 48, 48 ), Rect2( 96, 144, 48, 48 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "one_shot"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 48, 48 ), Rect2( 48, 0, 48, 48 ), Rect2( 96, 0, 48, 48 ), Rect2( 0, 48, 48, 48 ), Rect2( 48, 48, 48, 48 ), Rect2( 96, 48, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 96, 96, 48, 48 ), Rect2( 0, 144, 48, 48 ), Rect2( 48, 144, 48, 48 ), Rect2( 96, 144, 48, 48 ) ]
+}
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 11 )
 shader_param/outLineSize = 0.05
 shader_param/alpha = 0.0
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -187,17 +272,24 @@ cell_size = Vector2( 48, 48 )
 format = 1
 tile_data = PoolIntArray( 458752, 0, 196609, 458753, 0, 196610, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 1, 458758, 0, 65536, 458759, 0, 0, 458760, 0, 196608, 458761, 0, 196609, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65538, 524291, 0, 65537, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65538, 524297, 0, 65538, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131074, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131074, 589833, 0, 131073 )
 
-[node name="Tent" type="AnimatedSprite" parent="Background"]
-material = ExtResource( 4 )
-position = Vector2( 312, 360 )
-frames = SubResource( 4 )
+[node name="Sign" type="AnimatedSprite" parent="Background"]
+material = SubResource( 5 )
+position = Vector2( 39.2946, 359.971 )
+frames = SubResource( 6 )
 animation = "idle"
+
+[node name="Tent" type="AnimatedSprite" parent="Background"]
+material = SubResource( 7 )
+position = Vector2( 312, 360 )
+frames = SubResource( 8 )
+animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Title" type="AnimatedSprite" parent="Background"]
 position = Vector2( 246, 240 )
-frames = SubResource( 5 )
+frames = SubResource( 9 )
 
 [node name="Characters" type="Node2D" parent="."]
 
@@ -210,26 +302,49 @@ flip_h = true
 
 [node name="Fire" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 230, 360 )
-frames = SubResource( 6 )
-frame = 2
+frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Beatrix" type="AnimatedSprite" parent="Characters"]
-material = SubResource( 8 )
+material = SubResource( 12 )
 position = Vector2( 190, 360 )
-frames = SubResource( 9 )
+frames = SubResource( 13 )
+frame = 1
 playing = true
 
 [node name="Gustaf" type="AnimatedSprite" parent="Characters"]
-material = SubResource( 10 )
+material = SubResource( 14 )
 position = Vector2( 270, 360 )
-frames = SubResource( 11 )
+frames = SubResource( 15 )
+frame = 1
 playing = true
 flip_h = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Gustaf"]
+root_node = NodePath("../Bubble")
+autoplay = "one_shot"
+anims/one_shot = SubResource( 16 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Characters/Gustaf"]
+root_node = NodePath("../Bubble")
+autoplay = "one_shot"
+anims/one_shot = SubResource( 19 )
+
+[node name="Bubble" type="Sprite" parent="Characters/Gustaf"]
+position = Vector2( 11.308, -28.7975 )
+texture = ExtResource( 20 )
+region_enabled = true
+region_rect = Rect2( 96, 144, 48, 48 )
+
+[node name="Bubble2" type="Sprite" parent="Characters/Gustaf"]
+position = Vector2( 11.308, -28.7975 )
+texture = ExtResource( 20 )
+region_enabled = true
+region_rect = Rect2( 96, 144, 48, 48 )
+
 [node name="Remy" type="AnimatedSprite" parent="Characters"]
-material = SubResource( 12 )
+material = SubResource( 17 )
 position = Vector2( 166, 360 )
-frames = SubResource( 13 )
-frame = 1
+frames = SubResource( 18 )
 playing = true
