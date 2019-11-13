@@ -22,6 +22,8 @@ var second_counter : float = 0
 func _ready() -> void:
 	for sprite in selector_array:
 		sprite.animation = "default"
+		if sprite.get_child_count() > 0:
+			sprite.get_child(0).set_current_animation("idle")
 
 func _process(delta : float) -> void:
 	second_counter += delta
@@ -30,11 +32,18 @@ func _process(delta : float) -> void:
 	selector_array[selector].material.set_shader_param("alpha", uniform_periodic)
 	
 	for sprite in selector_array:
+
 		if sprite == selector_array[selector]:
 			sprite.animation = "idle"
+			if sprite.get_child_count() > 0:
+				if sprite.get_child(0).get_assigned_animation() != "one_shot":
+					sprite.get_child(0).set_current_animation("one_shot")
 			continue
 		sprite.material.set_shader_param("alpha", 0)
 		sprite.animation = "default"
+		if sprite.get_child_count() > 0:
+			if sprite.get_child(0).get_current_animation() != "idle":
+				sprite.get_child(0).set_current_animation("idle")
 	
 	if Input.is_action_pressed("ui_accept"):
 		scene_manager.change_scene(scene_array[selector])
