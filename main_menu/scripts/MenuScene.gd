@@ -6,7 +6,7 @@ var hiking_scene = "res://hiking_scene/scenes/HikingScene.tscn"
 var option_scene = "res://option_scene/scenes/OptionScene.tscn"
 var quit_scene = "res://quit_scene/scenes/QuitScene.tscn"
 
-export(int, 0, 2) var selector : int = 0
+export(int, 0, 4) var selector : int = 1
 
 onready var beatrix_sprite : AnimatedSprite = $Characters/Beatrix as AnimatedSprite
 onready var gustaf_sprite : AnimatedSprite = $Characters/Gustaf as AnimatedSprite
@@ -38,12 +38,14 @@ func _process(delta : float) -> void:
 			if sprite.get_child_count() > 0:
 				if sprite.get_child(0).get_assigned_animation() != "one_shot":
 					sprite.get_child(0).set_current_animation("one_shot")
+					sprite.get_child(2).show()
 			continue
 		sprite.material.set_shader_param("alpha", 0)
 		sprite.animation = "default"
 		if sprite.get_child_count() > 0:
 			if sprite.get_child(0).get_current_animation() != "idle":
 				sprite.get_child(0).set_current_animation("idle")
+				sprite.get_child(2).hide()
 	
 	if Input.is_action_pressed("ui_accept"):
 		scene_manager.change_scene(scene_array[selector])
