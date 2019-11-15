@@ -3,6 +3,8 @@
 [ext_resource path="res://rafting_scene/scripts/Obstacle.gd" type="Script" id=1]
 [ext_resource path="res://assets/l2_river_rock_2.png" type="Texture" id=2]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.6619, 15.1747 )
 

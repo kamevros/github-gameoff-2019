@@ -8,6 +8,8 @@
 [ext_resource path="res://climbing_scene/scenes/Gustaf.tscn" type="PackedScene" id=6]
 [ext_resource path="res://climbing_scene/scripts/GustafFreeJump.gd" type="Script" id=7]
 
+
+
 [sub_resource type="TileSet" id=1]
 0/name = "l1_mountain_stavros_v2.png 0"
 0/texture = ExtResource( 1 )

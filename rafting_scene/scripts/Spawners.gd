@@ -17,9 +17,11 @@ func _ready() -> void:
 	
 	
 func _on_SpawnTimer_timeout() -> void:
+	rng.randomize()
 	var index : int = rng.randi_range (0, get_child_count() - 1)
 	var obstacle : int = rng.randi_range (0, obstacles.size() - 1)
 
 	var instance = obstacles[obstacle].instance()
+
 	instance.set_global_position(get_child(index).get_position())
 	obstacles_node.add_child(instance)
