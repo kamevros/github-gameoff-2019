@@ -313,7 +313,6 @@ material = SubResource( 7 )
 position = Vector2( 312, 360 )
 frames = SubResource( 8 )
 animation = "idle"
-frame = 1
 playing = true
 flip_h = true
 
@@ -334,7 +333,6 @@ playing = true
 material = SubResource( 12 )
 position = Vector2( 190, 360 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Beatrix"]
@@ -361,7 +359,6 @@ align = 1
 material = SubResource( 16 )
 position = Vector2( 270, 360 )
 frames = SubResource( 17 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -390,6 +387,7 @@ align = 1
 material = SubResource( 19 )
 position = Vector2( 163, 360 )
 frames = SubResource( 20 )
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Remy"]
