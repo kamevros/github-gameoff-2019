@@ -65,8 +65,7 @@ func _process(delta : float) -> void:
 				new_anim = "walk"
 			else:
 				velocity.x = lerp(velocity.x, 0, friction)
-			if !is_on_floor() :
-				current_state = PLAYER_STATE.FALLING
+
 				
 	if anim != new_anim:
 		sprite.play(new_anim)

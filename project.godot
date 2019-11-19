@@ -38,7 +38,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Around a Campfire"
+config/name="Around Th Campfire"
 run/main_scene="res://main_menu/scenes/MenuScene.tscn"
 boot_splash/image="res://kamevros.png"
 boot_splash/bg_color=Color( 0.329412, 0.301961, 0.301961, 1 )
@@ -108,3 +108,7 @@ movement_left={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[rendering]
+
+quality/2d/use_pixel_snap=true

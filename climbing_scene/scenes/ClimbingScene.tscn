@@ -101,5 +101,6 @@ jump_speed = 350
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
+smoothing_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
