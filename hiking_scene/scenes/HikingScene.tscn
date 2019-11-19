@@ -1,3 +1,7 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main_menu/scenes/TextTransitionScene.tscn" type="PackedScene" id=1]
 
 [node name="HikingScene" type="Node2D"]
+
+[node name="TextTransitionScene" parent="." instance=ExtResource( 1 )]

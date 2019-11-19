@@ -16,6 +16,7 @@ onready var sign_sprite : AnimatedSprite = $Background/Sign as AnimatedSprite
 
 onready var selector_array = [sign_sprite, remy_sprite, beatrix_sprite, gustaf_sprite, tent_sprite]
 onready var scene_array = [quit_scene, rafting_scene, hiking_scene, climbing_scene, option_scene]
+onready var text_array = [null, "remy_begin", "beatrix_begin", "gustaf_begin", null]
 
 var second_counter : float = 0
 
@@ -48,6 +49,8 @@ func _process(delta : float) -> void:
 				sprite.get_child(2).hide()
 	
 	if Input.is_action_pressed("ui_accept"):
+		if text_array[selector]:
+			globals.string_to_render = text_array[selector]
 		scene_manager.change_scene(scene_array[selector])
 		
 	if Input.is_action_just_pressed("movement_left"):

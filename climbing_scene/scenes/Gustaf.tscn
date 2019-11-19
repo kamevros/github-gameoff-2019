@@ -2,19 +2,18 @@
 
 [ext_resource path="res://climbing_scene/assets/resources/goat_spriteframes.tres" type="SpriteFrames" id=1]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 6.83743
-height = 24.0213
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.30254, 3.48401 )
 
 [node name="Gustaf" type="KinematicBody2D"]
-position = Vector2( 240, 451 )
+position = Vector2( 251.79, 450.008 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.352142, 4.18176 )
+position = Vector2( 0.198761, 18.6157 )
 scale = Vector2( 1.56, 1 )
 shape = SubResource( 1 )
 

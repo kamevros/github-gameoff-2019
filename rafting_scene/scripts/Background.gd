@@ -11,6 +11,7 @@ func _on_Remy_scene_timer_ended(victory : bool) -> void:
 	yield($ModulateTween, "tween_completed")
 	
 	if victory:
+		globals.string_to_render = "remy_end"
 		scene_manager.change_scene(globals.menu_scene)
 	else:
 		scene_manager.change_scene(globals.game_over_scene)

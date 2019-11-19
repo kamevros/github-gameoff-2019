@@ -1,31 +1,32 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://main_menu/scripts/MenuScene.gd" type="Script" id=1]
-[ext_resource path="res://main_menu/assets/sounds/sovereign-quarter-by-kevin-macleod.ogg" type="AudioStream" id=2]
-[ext_resource path="res://assets/l0_camp.png" type="Texture" id=3]
-[ext_resource path="res://assets/l0_sign_0.png" type="Texture" id=4]
-[ext_resource path="res://assets/l0_tent_quechua_0.png" type="Texture" id=5]
-[ext_resource path="res://assets/l0_tent_quechua_2.png" type="Texture" id=6]
-[ext_resource path="res://assets/l0_title.png" type="Texture" id=7]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=8]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=9]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=10]
-[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=11]
-[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=12]
-[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=13]
-[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=14]
-[ext_resource path="res://assets/l0_selection_woods.png" type="Texture" id=15]
-[ext_resource path="res://assets/fonts/dynamic_font.tres" type="DynamicFont" id=16]
-[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=17]
-[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=18]
-[ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=19]
-[ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=20]
-[ext_resource path="res://assets/l0_selection_mountain.png" type="Texture" id=21]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=22]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=23]
-[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=24]
-[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=25]
-[ext_resource path="res://assets/l0_selection_river.png" type="Texture" id=26]
+[ext_resource path="res://main_menu/scenes/TextTransitionScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main_menu/assets/sounds/sovereign-quarter-by-kevin-macleod.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/l0_camp.png" type="Texture" id=4]
+[ext_resource path="res://assets/l0_sign_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/l0_tent_quechua_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/l0_tent_quechua_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/l0_title.png" type="Texture" id=8]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=9]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=10]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=11]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=12]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=13]
+[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=14]
+[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=15]
+[ext_resource path="res://assets/l0_selection_woods.png" type="Texture" id=16]
+[ext_resource path="res://assets/fonts/dynamic_font.tres" type="DynamicFont" id=17]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=18]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=19]
+[ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=20]
+[ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=21]
+[ext_resource path="res://assets/l0_selection_mountain.png" type="Texture" id=22]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=23]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=25]
+[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=26]
+[ext_resource path="res://assets/l0_selection_river.png" type="Texture" id=27]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.0117647, 0.00392157, 0.172549, 1, 0.321569, 0, 0.121569, 1 )
@@ -36,7 +37,7 @@ width = 480
 
 [sub_resource type="TileSet" id=3]
 0/name = "l0_camp.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 144, 192 )
@@ -88,12 +89,12 @@ shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
@@ -106,12 +107,12 @@ shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -119,7 +120,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -127,7 +128,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -169,12 +170,12 @@ shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -217,12 +218,12 @@ shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -250,12 +251,12 @@ shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=20]
 animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -277,10 +278,13 @@ tracks/0/keys = {
 }
 
 [node name="MenuScene" type="Node"]
+pause_mode = 1
 script = ExtResource( 1 )
 
+[node name="TextTransitionScene" parent="." instance=ExtResource( 2 )]
+
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
 volume_db = -30.0
 autoplay = true
 
@@ -341,7 +345,7 @@ anims/one_shot = SubResource( 15 )
 
 [node name="BubbleWood" type="Sprite" parent="Characters/Beatrix"]
 position = Vector2( 16.795, -34.4854 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 region_enabled = true
 
 [node name="NameLabel" type="Label" parent="Characters/Beatrix"]
@@ -350,7 +354,7 @@ margin_left = -42.6984
 margin_top = 25.0
 margin_right = 47.3016
 margin_bottom = 64.585
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 17 )
 text = "Beatrix"
 align = 1
 
@@ -368,7 +372,7 @@ anims/one_shot = SubResource( 18 )
 
 [node name="BubbleMountain" type="Sprite" parent="Characters/Gustaf"]
 position = Vector2( 13.0995, -34.5505 )
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 region_enabled = true
 region_rect = Rect2( 96, 144, 48, 48 )
 
@@ -378,7 +382,7 @@ margin_left = -47.0
 margin_top = 25.0
 margin_right = 34.8442
 margin_bottom = 66.0
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 17 )
 text = "Gustaf"
 align = 1
 
@@ -396,7 +400,7 @@ anims/one_shot = SubResource( 21 )
 
 [node name="BubbleRiver" type="Sprite" parent="Characters/Remy"]
 position = Vector2( -14.9169, -34.312 )
-texture = ExtResource( 26 )
+texture = ExtResource( 27 )
 region_enabled = true
 region_rect = Rect2( 48, 144, 48, 48 )
 
@@ -406,6 +410,6 @@ margin_left = -34.0
 margin_top = 25.0
 margin_right = 39.8616
 margin_bottom = 66.047
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 17 )
 text = "Remy"
 align = 1

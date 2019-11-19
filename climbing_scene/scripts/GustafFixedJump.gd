@@ -9,7 +9,7 @@ export(int, 0, 1000, 1) var jump_speed : int = 300
 export(float, 0, 1, 0.1) var base_acceleration : float = 1
 export(float, 0, 1, 0.1) var base_friction : float = 1
 export(float, 0, 1, 0.05) var slippery_acceleration : float = 0.05
-export(float, 0, 1, 0.05) var slippery_friction : float = 0.2
+export(float, 0, 1, 0.05) var slippery_friction : float = 0
 export(PLAYER_STATE) var current_state : int = PLAYER_STATE.FALLING
 
 onready var camera = get_node("../Camera2D")
@@ -84,6 +84,10 @@ func _process(delta : float) -> void:
 
 func _physics_process(delta : float) -> void:
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+
+func _on_VisibilityNotifier2D_screen_exited() -> void:
+	scene_manager.change_scene(globals.game_over_scene)
 
 
 func get_input() -> Vector2:
@@ -97,11 +101,12 @@ func get_input() -> Vector2:
 			direction.x = -1
 			sprite.flip_h = true
 	
-		if can_jump && Input.is_action_pressed("movement_up"):
-			if Input.is_action_pressed("movement_right"):
+		if can_jump && Input.is_action_just_pressed("movement_up"):
+			direction.x = 0
+			if Input.is_action_just_pressed("movement_right"):
 				direction.x = +1
 				sprite.flip_h = false
-			elif Input.is_action_pressed("movement_left"):
+			elif Input.is_action_just_pressed("movement_left"):
 				direction.x = -1
 				sprite.flip_h = true
 			direction.y = -1
@@ -117,8 +122,4 @@ func slip(is_slippery : bool) -> void:
 	else:
 		acceleration = base_acceleration
 		friction = base_friction
-	
-
-func _on_VisibilityNotifier2D_screen_exited() -> void:
-	scene_manager.change_scene(globals.game_over_scene)
 	
