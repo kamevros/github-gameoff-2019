@@ -10,7 +10,7 @@ position = Vector2( 251.79, 450.008 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-animation = "walk"
+animation = "falling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.198761, 18.6157 )

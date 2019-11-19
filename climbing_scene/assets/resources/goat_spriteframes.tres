@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=2]
+[gd_resource type="SpriteFrames" load_steps=12 format=2]
 
 [ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=1]
 [ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/p0_goat_sit_1.png" type="Texture" id=7]
 [ext_resource path="res://assets/p0_goat_walk_0.png" type="Texture" id=8]
 [ext_resource path="res://assets/p0_goat_walk_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/p0_goa_fall_0.png" type="Texture" id=10]
+[ext_resource path="res://assets/p0_goa_fall_1.png" type="Texture" id=11]
 
 [resource]
 animations = [ {
@@ -30,5 +32,10 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "falling",
 "speed": 5.0
 } ]

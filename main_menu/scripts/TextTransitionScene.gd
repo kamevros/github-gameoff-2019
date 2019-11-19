@@ -1,6 +1,6 @@
 extends Control
 
-onready var text : Label = $Text
+onready var text : Label = $CanvasLayer/Text
 
 signal transition_done
 

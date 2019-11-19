@@ -53,6 +53,9 @@ func _process(delta : float) -> void:
 		PLAYER_STATE.FALLING:
 			velocity.y += GRAVITY_SPEED * delta
 			
+			if velocity.y > 0.1:
+				new_anim = "falling"
+				
 			if is_on_floor():
 				can_jump = true
 				current_state = PLAYER_STATE.IDLE
