@@ -1,10 +1,11 @@
-extends CanvasLayer
+extends Control
 
 onready var text : Label = $Text
 
 signal transition_done
 
 func _ready():
+	self.show()
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	set_process(false)
 	get_tree().paused = true

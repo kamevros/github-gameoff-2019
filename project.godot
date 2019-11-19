@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://rafting_scene/scripts/Remy.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "PlayerRabbit",
+"language": "GDScript",
+"path": "res://hiking_scene/scripts/Beatrix.gd"
+}, {
 "base": "Node2D",
 "class": "obstacle",
 "language": "GDScript",
@@ -33,6 +38,7 @@ _global_script_class_icons={
 "PlayerGoatFixedJump": "",
 "PlayerGoatFreeJump": "",
 "PlayerMouse": "",
+"PlayerRabbit": "",
 "obstacle": ""
 }
 
