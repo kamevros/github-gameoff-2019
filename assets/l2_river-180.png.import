@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/l2_river.png-3c60bcac356f0d879e470f963d0c6374.stex"
+path="res://.import/l2_river-180.png-c4be3e16f99a81ccadd8d5ac45e1da2f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/l2_river.png"
-dest_files=[ "res://.import/l2_river.png-3c60bcac356f0d879e470f963d0c6374.stex" ]
+source_file="res://assets/l2_river-180.png"
+dest_files=[ "res://.import/l2_river-180.png-c4be3e16f99a81ccadd8d5ac45e1da2f.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

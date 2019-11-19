@@ -326,7 +326,6 @@ editor/display_folded = true
 [node name="Fire" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 230, 360 )
 frames = SubResource( 10 )
-frame = 2
 playing = true
 
 [node name="Beatrix" type="AnimatedSprite" parent="Characters"]

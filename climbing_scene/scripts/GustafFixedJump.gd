@@ -120,5 +120,5 @@ func slip(is_slippery : bool) -> void:
 	
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-	scene_manager.change_scene(menu_scene)
+	scene_manager.change_scene(globals.game_over_scene)
 	

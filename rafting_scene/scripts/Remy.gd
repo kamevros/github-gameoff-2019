@@ -3,7 +3,7 @@ class_name PlayerMouse
 
 signal scene_timer_ended
 
-export(int, 50, 150) var velocity_y = 70
+export(int, 50, 150) var velocity_y = 80
 export(int, 50, 150) var offset_y = 75
 
 onready var sprite : AnimatedSprite = $AnimatedSprite as AnimatedSprite
@@ -79,14 +79,10 @@ func movement(direction : Vector2) -> void:
 		horizontal_movement_tween.interpolate_property(self, "position:x",
 			position.x, position.x + 25 * direction.x, .3,
 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		rotation_tween.interpolate_property(self, "rotation_degrees",
-			self.rotation_degrees, 15 * direction.x, .3,
-			Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 			
 		tween_active = true
 		
 		horizontal_movement_tween.start()
-		rotation_tween.start()
 		
 	elif direction.y != 0:
 		if (offset_y <= 50 && direction.y < 0) || (offset_y > 150 && direction.y > 0):
@@ -95,14 +91,10 @@ func movement(direction : Vector2) -> void:
 		vertical_movement_tween.interpolate_property(self, "offset_y",
 			offset_y, offset_y + 25 * direction.y, .3,
 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		rotation_tween.interpolate_property(self, "rotation_degrees",
-			self.rotation_degrees, 0, .3,
-			Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 			
 		tween_active = true
 		
 		vertical_movement_tween.start()
-		rotation_tween.start()
 	
 
 func get_input(delta : float) -> Vector2:
@@ -110,12 +102,12 @@ func get_input(delta : float) -> Vector2:
 
 	if Input.is_action_just_pressed("movement_right"):
 		direction.x = -1
-		sprite.flip_h = false
+		sprite.flip_h = true
 		movement(direction)
 		
 	elif Input.is_action_just_pressed("movement_left"):
 		direction.x = +1
-		sprite.flip_h = true
+		sprite.flip_h = false
 		movement(direction)
 		
 	elif Input.is_action_just_pressed("movement_up"):
