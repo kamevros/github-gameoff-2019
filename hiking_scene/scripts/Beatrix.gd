@@ -5,6 +5,8 @@ export(int, 50, 500) var speed : int = 100
 
 onready var sprite : AnimatedSprite = $AnimatedSprite
 
+var anim : String = "idle"
+
 var direction : = Vector2()
 var velocity : = Vector2()
 
@@ -12,11 +14,13 @@ var moving : bool = false
 var terror : float = 0
 
 signal terror_changed
+signal moved_x
 
 func _process(delta: float) -> void:
 	var direction : Vector2 = get_input()
-	move_and_collide(direction * delta * speed)
+	move_and_slide(direction * speed)
 	manage_terror(delta)
+	manage_animation()
 	
 	
 func get_input() -> Vector2:
@@ -26,7 +30,7 @@ func get_input() -> Vector2:
 	
 	if Input.is_action_pressed("movement_right"):
 		moving = true
-		direction.x = +1
+		direction.x = 1
 		sprite.flip_h = false
 	
 	if Input.is_action_pressed("movement_left"):
@@ -41,6 +45,19 @@ func get_input() -> Vector2:
 	if Input.is_action_pressed("movement_down"):
 		moving = true
 		direction.y = +1
+		
+	
+	if get_slide_count() > 0:
+		var collision = get_slide_collision(0)
+		if collision.position.x > position.x and direction.x > 0:
+			direction.x = 0
+		elif collision.position.x + 24 < position.x +24 and direction.x < 0:
+			direction.x = 0
+			
+
+	emit_signal("moved_x", direction.x, speed)
+		
+	direction.x = 0
 	
 	return direction
 	
@@ -55,7 +72,18 @@ func manage_terror(delta : float) -> void:
 	emit_signal("terror_changed", terror)
 		
 		
+func manage_animation() -> void:
+	var new_anim : String = "idle"
 	
+	if moving:
+		new_anim = "walk"
+		
+	if anim != new_anim:
+		sprite.play(new_anim)
+		
+	anim = new_anim
+	
+
 func clamp_position() -> void:
 	position.x = clamp(position.x, 24, 480-24)
 	position.y = clamp(position.y, 240-48, 480-48)

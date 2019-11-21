@@ -1,181 +1,184 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://assets/l3_wood_treetop.png" type="Texture" id=1]
-[ext_resource path="res://assets/l3_wood_treebase.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/Gaegu-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://hiking_scene/scripts/ProgressBar.gd" type="Script" id=4]
-[ext_resource path="res://assets/l3_wood_bush.png" type="Texture" id=5]
-[ext_resource path="res://hiking_scene/scripts/Beatrix.gd" type="Script" id=6]
-[ext_resource path="res://assets/light.png" type="Texture" id=7]
-[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=8]
-[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/Gaegu-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://hiking_scene/scripts/ProgressBar.gd" type="Script" id=2]
+[ext_resource path="res://hiking_scene/TileMap.gd" type="Script" id=3]
+[ext_resource path="res://assets/l3_wood.png" type="Texture" id=4]
+[ext_resource path="res://hiking_scene/scripts/Beatrix.gd" type="Script" id=5]
+[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=7]
+[ext_resource path="res://assets/p3_rabbit_walk_0.png" type="Texture" id=8]
+[ext_resource path="res://assets/p3_rabbit_walk_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/p3_rabbit_walk_2.png" type="Texture" id=10]
+[ext_resource path="res://assets/light.png" type="Texture" id=11]
+[ext_resource path="res://hiking_scene/scripts/Light2D.gd" type="Script" id=12]
+[ext_resource path="res://hiking_scene/scenes/Tree.tscn" type="PackedScene" id=13]
+[ext_resource path="res://hiking_scene/scenes/BrokenTree.tscn" type="PackedScene" id=14]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 30
 outline_color = Color( 0.345098, 0.345098, 0.345098, 1 )
 use_filter = true
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="TileSet" id=3]
+0/name = "l3_wood.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 192, 144 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 48, 48 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 11, 21 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 245, 16 )
 
 [node name="HikingScene" type="Node2D"]
 
-[node name="Tree2" type="Node2D" parent="."]
-editor/display_folded = true
-position = Vector2( 92, 405 )
-z_index = -1
-
-[node name="TopSprite" type="Sprite" parent="Tree2"]
-position = Vector2( 0, -47 )
-texture = ExtResource( 1 )
-
-[node name="BottomSprite" type="Sprite" parent="Tree2"]
-texture = ExtResource( 2 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 layer = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -36.0
-margin_bottom = -22.0
-rect_scale = Vector2( 0.56, 1 )
-custom_fonts/font = SubResource( 2 )
-script = ExtResource( 4 )
+margin_right = 4.0
+custom_fonts/font = SubResource( 1 )
+script = ExtResource( 2 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
-layer = 0
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = -2
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-z_index = -1
-motion_mirroring = Vector2( 480, 0 )
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+modulate = Color( 0.54902, 0.54902, 0.54902, 1 )
+motion_mirroring = Vector2( 960, 0 )
+script = ExtResource( 3 )
 
-[node name="Tree" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
-position = Vector2( 24, 385 )
-z_index = -1
+[node name="TileMap" type="TileMap" parent="ParallaxBackground2/ParallaxLayer"]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 48, 48 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 589824, 0, 131074, 589825, 0, 131074, 589826, 0, 131072, 589827, 0, 131074, 589828, 0, 131073, 589829, 0, 131072, 589830, 0, 131072, 589831, 0, 131072, 589832, 0, 131072, 589833, 0, 131074, 589834, 0, 131074, 589835, 0, 131074, 589836, 0, 131074, 589837, 0, 131074, 589838, 0, 131074, 589839, 0, 131074, 589840, 0, 131074, 589841, 0, 131074, 589842, 0, 131074, 589843, 0, 131074 )
 
-[node name="TopSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree"]
-position = Vector2( 0, -47 )
-texture = ExtResource( 1 )
+[node name="CanvasModulate2" type="CanvasModulate" parent="ParallaxBackground2/ParallaxLayer"]
+light_mask = 3
+color = Color( 0.27451, 0.27451, 0.27451, 1 )
 
-[node name="BottomSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree"]
-texture = ExtResource( 2 )
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
 
-[node name="Tree3" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
-position = Vector2( 120, 384 )
-z_index = -1
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
+modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
+motion_mirroring = Vector2( 960, 0 )
+script = ExtResource( 3 )
 
-[node name="TopSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree3"]
-position = Vector2( 0, -47 )
-texture = ExtResource( 1 )
+[node name="TileMap" type="TileMap" parent="ParallaxBackground3/ParallaxLayer"]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 48, 48 )
+format = 1
+tile_data = PoolIntArray( 65536, 0, 65537, 65537, 0, 65537, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 65544, 0, 65537, 65545, 0, 3, 65546, 0, 3, 65547, 0, 3, 65548, 0, 65537, 65549, 0, 65537, 65550, 0, 65537, 65551, 0, 3, 65552, 0, 3, 65553, 0, 3, 65554, 0, 3, 65555, 0, 3, 131072, 0, 65537, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65539, 131078, 0, 65537, 131079, 0, 65537, 131080, 0, 65537, 131081, 0, 3, 131082, 0, 3, 131083, 0, 3, 131084, 0, 65539, 131085, 0, 65537, 131086, 0, 65537, 131087, 0, 65537, 131088, 0, 65537, 131089, 0, 65537, 131090, 0, 65537, 131091, 0, 65537, 196608, 0, 65537, 196609, 0, 65539, 196610, 0, 65537, 196611, 0, 65537, 196612, 0, 65537, 196613, 0, 65537, 196614, 0, 65537, 196615, 0, 65537, 196616, 0, 65537, 196617, 0, 65537, 196618, 0, 3, 196619, 0, 65537, 196620, 0, 65537, 196621, 0, 65537, 196622, 0, 65537, 196623, 0, 65537, 196624, 0, 65537, 196625, 0, 65537, 196626, 0, 65537, 196627, 0, 65537, 262144, 0, 65537, 262145, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 65537, 262152, 0, 65537, 262153, 0, 65537, 262154, 0, 3, 262155, 0, 65537, 262156, 0, 65537, 262157, 0, 65537, 262158, 0, 3, 262159, 0, 65537, 262160, 0, 65537, 262161, 0, 65537, 262162, 0, 65537, 262163, 0, 65537, 327680, 0, 65537, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 65537, 327684, 0, 65537, 327685, 0, 65537, 327686, 0, 65537, 327687, 0, 65537, 327688, 0, 65537, 327689, 0, 65537, 327690, 0, 65537, 327691, 0, 65537, 327692, 0, 65537, 327693, 0, 3, 327694, 0, 3, 327695, 0, 65537, 327696, 0, 65537, 327697, 0, 65537, 327698, 0, 65537, 327699, 0, 3, 393216, 0, 65537, 393217, 0, 65537, 393218, 0, 65537, 393219, 0, 65537, 393220, 0, 65539, 393221, 0, 65537, 393222, 0, 65537, 393223, 0, 65537, 393224, 0, 65539, 393225, 0, 65537, 393226, 0, 65537, 393227, 0, 3, 393228, 0, 65537, 393229, 0, 65537, 393230, 0, 65537, 393231, 0, 65537, 393232, 0, 65537, 393233, 0, 65537, 393234, 0, 65537, 393235, 0, 65537, 458752, 0, 65537, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537, 458761, 0, 65537, 458762, 0, 3, 458763, 0, 65537, 458764, 0, 65537, 458765, 0, 3, 458766, 0, 65537, 458767, 0, 65537, 458768, 0, 3, 458769, 0, 65537, 458770, 0, 65539, 458771, 0, 65537, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65537, 524291, 0, 65537, 524292, 0, 65537, 524293, 0, 65537, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65537, 524297, 0, 65537, 524298, 0, 3, 524299, 0, 65537, 524300, 0, 65537, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65538, 524304, 0, 3, 524305, 0, 65537, 524306, 0, 65537, 524307, 0, 65537 )
 
-[node name="BottomSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree3"]
-texture = ExtResource( 2 )
-
-[node name="Tree4" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
-position = Vector2( 183, 384 )
-z_index = -1
-
-[node name="TopSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree4"]
-position = Vector2( 0, -47 )
-texture = ExtResource( 1 )
-
-[node name="BottomSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree4"]
-texture = ExtResource( 2 )
-
-[node name="Tree5" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
-position = Vector2( 243, 383 )
-z_index = -1
-
-[node name="TopSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree5"]
-position = Vector2( 0, -47 )
-texture = ExtResource( 1 )
-
-[node name="BottomSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree5"]
-texture = ExtResource( 2 )
-
-[node name="Tree6" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
-editor/display_folded = true
-position = Vector2( 243, 383 )
-z_index = -1
-
-[node name="TopSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree6"]
-position = Vector2( 0, -47 )
-texture = ExtResource( 1 )
-
-[node name="BottomSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Tree6"]
-texture = ExtResource( 2 )
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
-z_index = 1
-motion_mirroring = Vector2( 480, 0 )
-
-[node name="Bush" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 20, 458 )
-z_index = -1
-texture = ExtResource( 5 )
-
-[node name="Bush2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 75, 458 )
-z_index = -1
-texture = ExtResource( 5 )
-
-[node name="Bush3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 141, 458 )
-z_index = -1
-texture = ExtResource( 5 )
-
-[node name="Bush4" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 201, 458 )
-z_index = -1
-texture = ExtResource( 5 )
-
-[node name="Bush5" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 243, 458 )
-z_index = -1
-texture = ExtResource( 5 )
-
-[node name="Bush6" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 281, 458 )
-z_index = -1
-texture = ExtResource( 5 )
-
-[node name="Bush7" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 281, 458 )
-z_index = -1
-texture = ExtResource( 5 )
-
-[node name="Node2D" type="Node2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground3/ParallaxLayer"]
+light_mask = 3
+color = Color( 0.27451, 0.27451, 0.27451, 1 )
 
 [node name="Beatrix" type="KinematicBody2D" parent="."]
-position = Vector2( 20, 448 )
-script = ExtResource( 6 )
+light_mask = 0
+position = Vector2( 240, 240 )
+script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="Beatrix"]
+z_as_relative = false
 current = true
-
-[node name="Light2D" type="Light2D" parent="Beatrix"]
-texture = ExtResource( 7 )
-energy = 0.5
+limit_left = 0
+limit_top = 0
+limit_bottom = 480
+editor_draw_limits = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Beatrix"]
-light_mask = 2
-frames = SubResource( 1 )
-animation = "idle"
+light_mask = 0
+z_as_relative = false
+frames = SubResource( 2 )
+animation = "walk"
+
+[node name="Light2D" type="Light2D" parent="Beatrix"]
+texture = ExtResource( 11 )
+color = Color( 0.835205, 0.859375, 0.0537109, 1 )
+range_z_min = -500
+range_layer_min = -1
+shadow_enabled = true
+script = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beatrix"]
+position = Vector2( -1, 3 )
+shape = SubResource( 10 )
+
+[node name="ParallaxBackground4" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground4"]
+modulate = Color( 0.564706, 0.564706, 0.564706, 1 )
+motion_mirroring = Vector2( 960, 0 )
+script = ExtResource( 3 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground4/ParallaxLayer"]
+light_mask = 3
+color = Color( 0.27451, 0.27451, 0.27451, 1 )
+
+[node name="Node2D" type="Node2D" parent="ParallaxBackground4/ParallaxLayer"]
+
+[node name="Tree" parent="ParallaxBackground4/ParallaxLayer/Node2D" instance=ExtResource( 13 )]
+light_mask = 0
+position = Vector2( 338, 222 )
+
+[node name="Tree2" parent="ParallaxBackground4/ParallaxLayer/Node2D" instance=ExtResource( 13 )]
+light_mask = 0
+position = Vector2( 811, 361 )
+
+[node name="BrokenTree" parent="ParallaxBackground4/ParallaxLayer/Node2D" instance=ExtResource( 14 )]
+position = Vector2( 659, 118 )
+
+[node name="BrokenTree2" parent="ParallaxBackground4/ParallaxLayer/Node2D" instance=ExtResource( 14 )]
+position = Vector2( 659, 118 )
+
+[node name="Borders" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="BorderTop" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BorderTop"]
+position = Vector2( 240, 18 )
+shape = SubResource( 11 )
+
+[node name="BorderTop2" type="StaticBody2D" parent="Borders"]
+position = Vector2( 0, 445 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BorderTop2"]
+position = Vector2( 240, 18 )
+shape = SubResource( 11 )
+[connection signal="moved_x" from="Beatrix" to="ParallaxBackground3/ParallaxLayer" method="_on_Beatrix_moved_x"]
+[connection signal="moved_x" from="Beatrix" to="ParallaxBackground2/ParallaxLayer" method="_on_Beatrix_moved_x"]
+[connection signal="moved_x" from="Beatrix" to="ParallaxBackground4/ParallaxLayer" method="_on_Beatrix_moved_x"]
 [connection signal="terror_changed" from="Beatrix" to="CanvasLayer/ProgressBar" method="_on_Beatrix_terror_changed"]
