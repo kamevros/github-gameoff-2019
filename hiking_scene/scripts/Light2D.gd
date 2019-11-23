@@ -1,7 +1,7 @@
 extends Light2D
 
-var time : float = 0
-
-func _process(delta: float) -> void:
-	time += delta
-	energy = sin((time * PI)*0.25)
+func _on_Beatrix_terror_changed(terror : float) -> void:
+	if terror == 0:
+		self.energy = 1
+	elif terror > 0:
+		self.energy = 1-terror/100

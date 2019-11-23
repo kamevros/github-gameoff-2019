@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-87539b10c4b4cebc046b6b91ffea6f69.stex"
+path="res://.import/l3_fade_white.png-2727724f0311e746336077f213394bc9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light.png"
-dest_files=[ "res://.import/light.png-87539b10c4b4cebc046b6b91ffea6f69.stex" ]
+source_file="res://assets/l3_fade_white.png"
+dest_files=[ "res://.import/l3_fade_white.png-2727724f0311e746336077f213394bc9.stex" ]
 
 [params]
 
