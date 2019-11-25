@@ -9,6 +9,7 @@ rough = true
 extents = Vector2( 19.2508, 11.4636 )
 
 [node name="LargePlatform" type="StaticBody2D"]
+editor/display_folded = true
 position = Vector2( 286.827, 440.985 )
 physics_material_override = SubResource( 1 )
 __meta__ = {

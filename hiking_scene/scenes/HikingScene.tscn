@@ -47,7 +47,7 @@ font_data = ExtResource( 2 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
@@ -55,10 +55,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 23, 22 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
@@ -81,7 +81,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 8, 8 )
 
 [node name="HikingScene" type="Node2D"]
@@ -128,7 +128,7 @@ position = Vector2( 35, 233 )
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Ghost"]
-frames = SubResource( 5 )
+frames = SubResource( 3 )
 animation = "idle"
 flip_h = true
 
@@ -143,7 +143,7 @@ position = Vector2( -851, -246 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost/Area2D"]
 position = Vector2( 0, -3 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Beatrix" type="KinematicBody2D" parent="."]
 light_mask = 0
@@ -163,7 +163,7 @@ editor_draw_drag_margin = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Beatrix"]
 light_mask = 0
 z_as_relative = false
-frames = SubResource( 3 )
+frames = SubResource( 5 )
 animation = "idle"
 
 [node name="Light2D" type="Light2D" parent="Beatrix"]
@@ -178,7 +178,7 @@ script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Beatrix"]
 position = Vector2( -1, 16 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Timer" type="Timer" parent="Beatrix"]
 wait_time = 2.0

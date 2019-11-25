@@ -2,7 +2,7 @@ extends Node
 
 signal countdown_timer_ended
 
-export(int, 5, 180, 5) var seconds_to_play : int = 5
+export(int, 5, 180, 5) var seconds_to_play : int = 30
 export(float, 5, 20, 1) var difficulty_increase_timer : float = 10
 
 onready var next_increment_difficulty : float = difficulty_increase_timer
