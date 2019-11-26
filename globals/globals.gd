@@ -12,6 +12,8 @@ var game_over_scene : String = "res://game_over_scene/scenes/GameOverScene.tscn"
 var transition_scene : String = "res://main_menu/scenes/TextTransitionScene.tscn"
 
 var remy_victory : bool = false
+var gustaf_victory : bool = false
+var beatrix_victory : bool = false
 
 var string_to_render = null
 

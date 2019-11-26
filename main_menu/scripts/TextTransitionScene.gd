@@ -1,10 +1,12 @@
 extends Control
 
 onready var text : Label = $CanvasLayer/Text
+onready var panel : Panel = $CanvasLayer/Panel
 
 signal transition_done
 
 func _ready():
+	panel.show()
 	self.show()
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	set_process(false)

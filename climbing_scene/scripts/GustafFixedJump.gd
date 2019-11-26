@@ -24,7 +24,11 @@ var can_jump : bool = false
 var anim : String = "idle"
 var old_camera_pos_x : float
 
+var can_move : bool = true
+
 var menu_scene = "res://main_menu/scenes/MenuScene.tscn"
+
+signal climbing_ended
 
 func _ready() -> void:
 	sprite.play(anim)
@@ -89,11 +93,21 @@ func _physics_process(delta : float) -> void:
 	
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
-	scene_manager.change_scene(globals.game_over_scene)
+	if can_move:
+		scene_manager.change_scene(globals.game_over_scene)
 
 
 func get_input() -> Vector2:
 	var direction : = Vector2()
+	
+	if !can_move:
+		return direction
+		
+	if Input.is_action_pressed("ui_page_up"):
+		print("dsad")
+		direction.y = -1
+		current_state = PLAYER_STATE.JUMPING
+		return direction
 
 	if current_state == PLAYER_STATE.IDLE:
 		if Input.is_action_pressed("movement_right"):
@@ -117,6 +131,11 @@ func get_input() -> Vector2:
 	return direction
 	
 	
+func jump():
+	direction.y = -1
+	current_state = PLAYER_STATE.JUMPING
+	
+	
 func slip(is_slippery : bool) -> void:
 	if is_slippery:
 		acceleration = slippery_acceleration
@@ -125,3 +144,13 @@ func slip(is_slippery : bool) -> void:
 		acceleration = base_acceleration
 		friction = base_friction
 	
+
+func _on_WinnerArea_body_entered(body: PhysicsBody2D) -> void:
+	can_move = false
+	globals.gustaf_victory = true
+	yield(get_tree().create_timer(1.5), "timeout")
+	jump()
+	yield(get_tree().create_timer(1.5), "timeout")
+	jump()
+	yield(get_tree().create_timer(1.5), "timeout")
+	emit_signal("climbing_ended")
