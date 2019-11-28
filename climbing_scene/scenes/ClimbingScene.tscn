@@ -1,14 +1,16 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://climbing_scene/scripts/ColorRect.gd" type="Script" id=1]
 [ext_resource path="res://main_menu/scenes/TextTransitionScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/l1_mountain_stavros_v2.png" type="Texture" id=3]
-[ext_resource path="res://climbing_scene/scenes/LargePlatform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://climbing_scene/scenes/SmallPlatform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://climbing_scene/scenes/IceSmallPlatform.tscn" type="PackedScene" id=6]
-[ext_resource path="res://climbing_scene/scenes/IceLargePlatform.tscn" type="PackedScene" id=7]
-[ext_resource path="res://climbing_scene/scenes/Gustaf.tscn" type="PackedScene" id=8]
-[ext_resource path="res://climbing_scene/scripts/GustafFixedJump.gd" type="Script" id=9]
+[ext_resource path="res://assets/l1_top_flag.png" type="Texture" id=3]
+[ext_resource path="res://climbing_scene/scripts/WinnerFlag.gd" type="Script" id=4]
+[ext_resource path="res://assets/l1_mountain_stavros_v2.png" type="Texture" id=5]
+[ext_resource path="res://climbing_scene/scenes/LargePlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://climbing_scene/scenes/SmallPlatform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://climbing_scene/scenes/IceSmallPlatform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://climbing_scene/scenes/IceLargePlatform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://climbing_scene/scenes/Gustaf.tscn" type="PackedScene" id=10]
+[ext_resource path="res://climbing_scene/scripts/GustafFixedJump.gd" type="Script" id=11]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.793548 )
@@ -17,9 +19,25 @@ colors = PoolColorArray( 0, 0.584314, 0.937255, 1, 0, 0.054902, 0.239216, 1 )
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
+[sub_resource type="Animation" id=8]
+resource_name = "waving"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 48, 50 ), Rect2( 48, 0, 48, 50 ), Rect2( 0, 47, 48, 49 ), Rect2( 48, 48, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 48, 96, 48, 48 ) ]
+}
+
 [sub_resource type="TileSet" id=3]
 0/name = "l1_mountain_stavros_v2.png 0"
-0/texture = ExtResource( 3 )
+0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 192, 240 )
@@ -76,6 +94,21 @@ grow_vertical = 2
 texture = SubResource( 2 )
 stretch_mode = 1
 
+[node name="WinnerFlag" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 181, -603 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 48, 0, 48, 48 )
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WinnerFlag"]
+autoplay = "waving"
+anims/waving = SubResource( 8 )
+
+[node name="Tween" type="Tween" parent="WinnerFlag"]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 3 )
 cell_size = Vector2( 48, 48 )
@@ -87,190 +120,190 @@ tile_data = PoolIntArray( -851965, 0, 3, -851964, 0, 0, -851963, 0, 3, -851962, 
 [node name="Platforms" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="LargePlatform" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 306, 449.84 )
 
-[node name="LargePlatform2" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform2" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 306, 410.84 )
 
-[node name="LargePlatform3" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform3" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 216, 362.84 )
 
-[node name="LargePlatform9" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform9" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 216, 386.84 )
 
-[node name="LargePlatform4" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform4" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 168, 299.484 )
 
-[node name="LargePlatform10" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform10" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 144, 256.84 )
 
-[node name="LargePlatform5" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform5" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 217, 338.84 )
 
-[node name="LargePlatform6" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform6" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 168.8, 323.484 )
 
-[node name="LargePlatform7" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform7" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 261, 323.484 )
 
-[node name="LargePlatform11" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform11" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 306, 280.84 )
 
-[node name="LargePlatform12" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform12" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 360, 281.84 )
 
-[node name="LargePlatform13" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform13" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 408, 267.84 )
 
-[node name="LargePlatform14" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform14" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 408, 112.84 )
 
-[node name="LargePlatform15" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform15" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 306.8, 88.8401 )
 
-[node name="LargePlatform18" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform18" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 192, 90.8401 )
 
-[node name="LargePlatform20" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform20" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 216, 64.8401 )
 
-[node name="LargePlatform21" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform21" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 168, 40.8401 )
 
-[node name="LargePlatform22" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform22" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 216, 16.8401 )
 
-[node name="LargePlatform23" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform23" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 261, -7.15985 )
 
-[node name="LargePlatform19" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform19" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 96, 89.8401 )
 
-[node name="LargePlatform24" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform24" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 72, -56.1599 )
 
-[node name="LargePlatform25" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform25" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 379.809, -79.1599 )
 
-[node name="LargePlatform26" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform26" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 354, -103.16 )
 
-[node name="LargePlatform27" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform27" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 306, -127.16 )
 
-[node name="LargePlatform28" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform28" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 261, -151.16 )
 
-[node name="LargePlatform16" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform16" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 379.809, 40.8401 )
 
-[node name="LargePlatform17" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform17" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 192, 231.84 )
 
-[node name="LargePlatform8" parent="Platforms" instance=ExtResource( 4 )]
+[node name="LargePlatform8" parent="Platforms" instance=ExtResource( 6 )]
 position = Vector2( 306, 311.84 )
 
-[node name="SmallPlatform" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 261, 397.363 )
 
-[node name="SmallPlatform3" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform3" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 408, 232.84 )
 
-[node name="SmallPlatform4" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform4" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 384, 208.84 )
 
-[node name="SmallPlatform5" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform5" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 355.809, 184.241 )
 
-[node name="SmallPlatform8" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform8" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 168.8, 207.84 )
 
-[node name="SmallPlatform9" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform9" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 144, 184.84 )
 
-[node name="SmallPlatform10" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform10" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 168, 160.84 )
 
-[node name="SmallPlatform11" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform11" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 144, 112.84 )
 
-[node name="SmallPlatform6" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform6" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 355.809, 160.241 )
 
-[node name="SmallPlatform7" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform7" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 355.809, 136.84 )
 
-[node name="SmallPlatform12" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform12" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 306, -31.1599 )
 
-[node name="SmallPlatform13" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform13" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 330, -55.1599 )
 
-[node name="SmallPlatform14" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform14" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 168, -7.15991 )
 
-[node name="SmallPlatform17" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform17" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 216, -175.16 )
 
-[node name="SmallPlatform15" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform15" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 121, -8.15991 )
 
-[node name="SmallPlatform16" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform16" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 96, -32.1599 )
 
-[node name="SmallPlatform2" parent="Platforms" instance=ExtResource( 5 )]
+[node name="SmallPlatform2" parent="Platforms" instance=ExtResource( 7 )]
 position = Vector2( 120, 287.84 )
 
-[node name="IceSmallPlatform" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 242.09, -223.16 )
 
-[node name="IceSmallPlatform2" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform2" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 261, -271.16 )
 
-[node name="IceSmallPlatform3" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform3" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 192, -319.16 )
 
-[node name="IceSmallPlatform4" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform4" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 227.79, -343.16 )
 
-[node name="IceSmallPlatform6" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform6" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 169.269, -463.282 )
 
-[node name="IceSmallPlatform7" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform7" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 192, -476.23 )
 
-[node name="IceSmallPlatform8" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform8" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 240, -489.178 )
 
-[node name="IceSmallPlatform9" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform9" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 264, -513.178 )
 
-[node name="IceSmallPlatform10" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform10" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 240, -537.177 )
 
-[node name="IceSmallPlatform11" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform11" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 216.8, -561.177 )
 
-[node name="IceSmallPlatform5" parent="Platforms" instance=ExtResource( 6 )]
+[node name="IceSmallPlatform5" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 275.79, -356.108 )
 
-[node name="IceLargePlatform" parent="Platforms" instance=ExtResource( 7 )]
+[node name="IceLargePlatform" parent="Platforms" instance=ExtResource( 9 )]
 position = Vector2( 288, -247.16 )
 
-[node name="IceLargePlatform3" parent="Platforms" instance=ExtResource( 7 )]
+[node name="IceLargePlatform3" parent="Platforms" instance=ExtResource( 9 )]
 position = Vector2( 237, -295.16 )
 
-[node name="IceLargePlatform4" parent="Platforms" instance=ExtResource( 7 )]
+[node name="IceLargePlatform4" parent="Platforms" instance=ExtResource( 9 )]
 position = Vector2( 168, -356.108 )
 
-[node name="IceLargePlatform5" parent="Platforms" instance=ExtResource( 7 )]
+[node name="IceLargePlatform5" parent="Platforms" instance=ExtResource( 9 )]
 position = Vector2( 168.5, -380.108 )
 
-[node name="IceLargePlatform6" parent="Platforms" instance=ExtResource( 7 )]
+[node name="IceLargePlatform6" parent="Platforms" instance=ExtResource( 9 )]
 position = Vector2( 168, -404.108 )
 
-[node name="IceLargePlatform7" parent="Platforms" instance=ExtResource( 7 )]
+[node name="IceLargePlatform7" parent="Platforms" instance=ExtResource( 9 )]
 position = Vector2( 169, -428.108 )
 
 [node name="Platform" type="StaticBody2D" parent="Platforms"]
@@ -325,8 +358,8 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ground"]
 shape = SubResource( 6 )
 
-[node name="Gustaf" parent="." instance=ExtResource( 8 )]
-script = ExtResource( 9 )
+[node name="Gustaf" parent="." instance=ExtResource( 10 )]
+script = ExtResource( 11 )
 jump_speed = 350
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -341,4 +374,5 @@ monitorable = false
 position = Vector2( 1.00005, 26 )
 shape = SubResource( 7 )
 [connection signal="climbing_ended" from="Gustaf" to="CanvasLayer/Background" method="_on_Gustaf_climbing_ended"]
+[connection signal="top_reached" from="Gustaf" to="WinnerFlag" method="_on_Gustaf_top_reached"]
 [connection signal="body_entered" from="WinnerArea" to="Gustaf" method="_on_WinnerArea_body_entered" flags=6]

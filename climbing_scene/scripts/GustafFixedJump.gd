@@ -29,6 +29,7 @@ var can_move : bool = true
 var menu_scene = "res://main_menu/scenes/MenuScene.tscn"
 
 signal climbing_ended
+signal top_reached
 
 func _ready() -> void:
 	sprite.play(anim)
@@ -104,7 +105,6 @@ func get_input() -> Vector2:
 		return direction
 		
 	if Input.is_action_pressed("ui_page_up"):
-		print("dsad")
 		direction.y = -1
 		current_state = PLAYER_STATE.JUMPING
 		return direction
@@ -148,6 +148,7 @@ func slip(is_slippery : bool) -> void:
 func _on_WinnerArea_body_entered(body: PhysicsBody2D) -> void:
 	can_move = false
 	globals.gustaf_victory = true
+	emit_signal("top_reached")
 	yield(get_tree().create_timer(1.5), "timeout")
 	jump()
 	yield(get_tree().create_timer(1.5), "timeout")

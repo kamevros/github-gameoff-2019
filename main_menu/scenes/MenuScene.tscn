@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://main_menu/scripts/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://main_menu/scenes/TextTransitionScene.tscn" type="PackedScene" id=2]
@@ -27,6 +27,13 @@
 [ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=25]
 [ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=26]
 [ext_resource path="res://assets/l0_selection_river.png" type="Texture" id=27]
+[ext_resource path="res://assets/l0_river_completed.png" type="Texture" id=28]
+[ext_resource path="res://main_menu/scripts/RemyFlag.gd" type="Script" id=29]
+[ext_resource path="res://assets/l0_woods_completed.png" type="Texture" id=30]
+[ext_resource path="res://main_menu/scripts/BeatrixFlag.gd" type="Script" id=31]
+[ext_resource path="res://assets/l0_mountain_completed.png" type="Texture" id=32]
+[ext_resource path="res://main_menu/scenes/GustafFlag.gd" type="Script" id=33]
+[ext_resource path="res://assets/l0_pg_rest.png" type="Texture" id=34]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.0117647, 0.00392157, 0.172549, 1, 0.321569, 0, 0.121569, 1 )
@@ -277,9 +284,78 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 48, 48 ), Rect2( 48, 0, 48, 48 ), Rect2( 96, 0, 48, 48 ), Rect2( 0, 48, 48, 48 ), Rect2( 48, 48, 48, 48 ), Rect2( 96, 48, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 96, 96, 48, 48 ), Rect2( 0, 144, 48, 48 ), Rect2( 48, 144, 48, 48 ), Rect2( 96, 144, 48, 48 ) ]
 }
 
+[sub_resource type="Animation" id=22]
+resource_name = "waving"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 2, 0, 46, 48 ), Rect2( 50, 0, 46, 48 ), Rect2( 2, 48, 46, 48 ), Rect2( 50, 48, 46, 48 ), Rect2( 2, 96, 46, 48 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "waving"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 2, 0, 46, 48 ), Rect2( 2, 0, 46, 48 ), Rect2( 2, 0, 46, 48 ), Rect2( 2, 48, 46, 48 ), Rect2( 50, 48, 46, 48 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "waving"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.33, 0.66, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 2, 0, 46, 48 ), Rect2( 50, 0, 46, 48 ), Rect2( 2, 48, 46, 48 ), Rect2( 50, 48, 46, 48 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "waving"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 62, 36, 38, 46 ), Rect2( 110, 18, 24, 28 ), Rect2( 144, 0, 38, 46 ), Rect2( 62, 36, 8, 10 ) ]
+}
+
 [node name="MenuScene" type="Node"]
 pause_mode = 1
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [ 220.805 ]
+}
 
 [node name="TextTransitionScene" parent="." instance=ExtResource( 2 )]
 
@@ -290,7 +366,11 @@ autoplay = true
 
 [node name="Background" type="Node2D" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Background"]
+[node name="Gradient" type="Node2D" parent="Background"]
+editor/display_folded = true
+z_index = -1
+
+[node name="TextureRect" type="TextureRect" parent="Background/Gradient"]
 margin_right = 480.0
 margin_bottom = 480.0
 grow_horizontal = 0
@@ -301,40 +381,50 @@ texture = SubResource( 2 )
 stretch_mode = 2
 
 [node name="TileMap" type="TileMap" parent="Background"]
+z_index = -1
 tile_set = SubResource( 3 )
 cell_size = Vector2( 48, 48 )
 format = 1
-tile_data = PoolIntArray( 458752, 0, 196609, 458753, 0, 196610, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 1, 458758, 0, 65536, 458759, 0, 0, 458760, 0, 196608, 458761, 0, 196609, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65538, 524291, 0, 65537, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65538, 524297, 0, 65538, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131074, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131074, 589833, 0, 131073 )
+tile_data = PoolIntArray( 458752, 0, 1, 458753, 0, 0, 458754, 0, 1, 458755, 0, 0, 458756, 0, 0, 458757, 0, 196608, 458758, 0, 196609, 458759, 0, 196610, 458760, 0, 1, 458761, 0, 65536, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65538, 524291, 0, 65537, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65538, 524297, 0, 65538, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131074, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131074, 589833, 0, 131073 )
 
 [node name="Sign" type="AnimatedSprite" parent="Background"]
 material = SubResource( 5 )
-position = Vector2( 39.2946, 359.971 )
+position = Vector2( 434.039, 359.971 )
+z_index = -1
 frames = SubResource( 6 )
 animation = "idle"
 
 [node name="Tent" type="AnimatedSprite" parent="Background"]
 material = SubResource( 7 )
-position = Vector2( 312, 360 )
+position = Vector2( 346.024, 360 )
+z_index = -1
 frames = SubResource( 8 )
 animation = "idle"
+frame = 1
 playing = true
 flip_h = true
 
 [node name="Title" type="AnimatedSprite" parent="Background"]
-position = Vector2( 246, 240 )
+position = Vector2( 239.823, 217.361 )
+scale = Vector2( 0.569215, 0.569215 )
+z_index = -1
 frames = SubResource( 9 )
 
 [node name="Characters" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 35, 0 )
 
 [node name="Fire" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 230, 360 )
 frames = SubResource( 10 )
+frame = 1
 playing = true
 
 [node name="Beatrix" type="AnimatedSprite" parent="Characters"]
 material = SubResource( 12 )
 position = Vector2( 190, 360 )
 frames = SubResource( 13 )
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Beatrix"]
@@ -361,6 +451,7 @@ align = 1
 material = SubResource( 16 )
 position = Vector2( 270, 360 )
 frames = SubResource( 17 )
+frame = 1
 playing = true
 flip_h = true
 
@@ -389,7 +480,6 @@ align = 1
 material = SubResource( 19 )
 position = Vector2( 163, 360 )
 frames = SubResource( 20 )
-frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Remy"]
@@ -412,3 +502,53 @@ margin_bottom = 66.047
 custom_fonts/font = ExtResource( 17 )
 text = "Remy"
 align = 1
+
+[node name="VictoryFlags" type="Node2D" parent="."]
+position = Vector2( -4, 0 )
+
+[node name="RemyFlag" type="Sprite" parent="VictoryFlags"]
+visible = false
+position = Vector2( 35, 360 )
+texture = ExtResource( 28 )
+region_enabled = true
+region_rect = Rect2( 2, 48, 46, 48 )
+script = ExtResource( 29 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/RemyFlag"]
+autoplay = "waving"
+anims/waving = SubResource( 22 )
+
+[node name="BeatrixFlag" type="Sprite" parent="VictoryFlags"]
+visible = false
+position = Vector2( 85, 360 )
+texture = ExtResource( 30 )
+region_enabled = true
+region_rect = Rect2( 2, 0, 46, 48 )
+script = ExtResource( 31 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/BeatrixFlag"]
+autoplay = "waving"
+anims/waving = SubResource( 23 )
+
+[node name="GustafFlag" type="Sprite" parent="VictoryFlags"]
+visible = false
+position = Vector2( 135, 360 )
+texture = ExtResource( 32 )
+region_enabled = true
+region_rect = Rect2( 2, 0, 46, 48 )
+script = ExtResource( 33 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/GustafFlag"]
+autoplay = "waving"
+anims/waving = SubResource( 24 )
+
+[node name="Zzz" type="Sprite" parent="VictoryFlags"]
+visible = false
+position = Vector2( 390.715, 345.129 )
+texture = ExtResource( 34 )
+region_enabled = true
+region_rect = Rect2( 62, 36, 8, 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/Zzz"]
+autoplay = "waving"
+anims/waving = SubResource( 25 )

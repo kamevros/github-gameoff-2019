@@ -14,27 +14,53 @@ onready var remy_sprite : AnimatedSprite = $Characters/Remy as AnimatedSprite
 onready var tent_sprite : AnimatedSprite = $Background/Tent as AnimatedSprite
 onready var sign_sprite : AnimatedSprite = $Background/Sign as AnimatedSprite
 
-onready var selector_array = [sign_sprite, remy_sprite, beatrix_sprite, gustaf_sprite, tent_sprite]
-onready var scene_array = [quit_scene, rafting_scene, hiking_scene, climbing_scene, option_scene]
-onready var text_array = [null, "remy_begin", "beatrix_begin", "gustaf_begin", null]
+onready var selector_dict = {
+	"sign" : {
+		"sprite" : sign_sprite,
+		"scene" : quit_scene,
+		"text" : null
+	},
+	"remy" : {
+		"sprite" : remy_sprite,
+		"scene" : rafting_scene,
+		"text" : "remy_begin"
+	},
+	"beatrix" : {
+		"sprite" : beatrix_sprite,
+		"scene" : hiking_scene,
+		"text" : "beatrix_begin"
+	},
+	"gustaf" : {
+		"sprite" : gustaf_sprite,
+		"scene" : climbing_scene,
+		"text" : "gustaf_begin"
+	}
+}
 
 var second_counter : float = 0
 
 func _ready() -> void:
-	for sprite in selector_array:
+	for obj in selector_dict:
+		var sprite = selector_dict[obj].sprite
 		sprite.animation = "default"
 		if sprite.get_child_count() > 0:
 			sprite.get_child(0).set_current_animation("idle")
+			
+	disable_quit_on_web_build()
+	hide_completed_minigame()
 
 func _process(delta : float) -> void:
 	second_counter += delta
-	var uniform_periodic = abs(cos(second_counter*3))
-
-	selector_array[selector].material.set_shader_param("alpha", uniform_periodic)
+	var uniform_periodic = abs(cos(second_counter * 3))
 	
-	for sprite in selector_array:
-
-		if sprite == selector_array[selector]:
+	var selector_keys = selector_dict.keys()
+	var selected = selector_keys[selector]
+	selector_dict[selected].sprite.material.set_shader_param("alpha", uniform_periodic)
+	
+	for obj in selector_dict:
+		var sprite = selector_dict[obj].sprite
+		
+		if obj == selected:
 			sprite.animation = "idle"
 			if sprite.get_child_count() > 0:
 				if sprite.get_child(0).get_assigned_animation() != "one_shot":
@@ -49,17 +75,34 @@ func _process(delta : float) -> void:
 				sprite.get_child(2).hide()
 	
 	if Input.is_action_pressed("ui_accept"):
-		if text_array[selector]:
-			globals.string_to_render = text_array[selector]
-		scene_manager.change_scene(scene_array[selector])
+		if selector_dict[selected].text:
+			globals.string_to_render = selector_dict[selected].text
+		scene_manager.change_scene(selector_dict[selected].scene)
 		
 	if Input.is_action_just_pressed("movement_left"):
 		selector -= 1
 		if selector < 0:
-			selector = selector_array.size() - 1
+			selector = selector_keys.size() - 1
 		
 	elif Input.is_action_just_pressed("movement_right"):
 		selector += 1
-		if selector > selector_array.size() - 1:
+		if selector > selector_keys.size() - 1:
 			selector = 0
 			
+			
+func disable_quit_on_web_build():
+	if OS.has_feature('Javascript'):
+		selector_dict.erase("sign")
+		
+		
+func hide_completed_minigame():
+	if(globals.remy_victory):
+		selector_dict["remy"].sprite.hide()
+		selector_dict.erase("remy")
+	if(globals.beatrix_victory):
+		selector_dict["beatrix"].sprite.hide()
+		selector_dict.erase("beatrix")
+	if(globals.gustaf_victory):
+		selector_dict["gustaf"].sprite.hide()
+		selector_dict.erase("gustaf")
+		

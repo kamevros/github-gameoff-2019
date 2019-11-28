@@ -15,7 +15,7 @@
 [ext_resource path="res://assets/p2_mouse_rafting_2.png" type="Texture" id=13]
 [ext_resource path="res://rafting_scene/assets/sounds/5025-beauty-flow-by-kevin-macleod.ogg" type="AudioStream" id=14]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=1]
 size = 30
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
@@ -52,6 +52,7 @@ radius = 8.98689
 height = 29.2483
 
 [node name="RaftingScene" type="Node"]
+editor/display_folded = true
 script = ExtResource( 1 )
 seconds_to_play = 90
 
@@ -71,7 +72,7 @@ script = ExtResource( 3 )
 [node name="CountdownTimerLabel" type="Label" parent="Canvas"]
 anchor_right = 1.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 autowrap = true
 
