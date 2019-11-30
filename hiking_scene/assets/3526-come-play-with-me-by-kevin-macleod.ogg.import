@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/3526-come-play-with-me-by-kevin-macleod.ogg-5a9b479d452d3ea9d6473fa272214232.oggstr"
+
+[deps]
+
+source_file="res://hiking_scene/assets/3526-come-play-with-me-by-kevin-macleod.ogg"
+dest_files=[ "res://.import/3526-come-play-with-me-by-kevin-macleod.ogg-5a9b479d452d3ea9d6473fa272214232.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

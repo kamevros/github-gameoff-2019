@@ -2,6 +2,7 @@ extends Node2D
 
 onready var animated_sprite : AnimatedSprite = $AnimatedSprite
 onready var collision : Area2D = $Area2D/CollisionShape2D
+onready var timer : Timer = $Timer
 
 export(float, 50, 300) var speed : float = 150
 
@@ -22,14 +23,18 @@ func _process(delta: float) -> void:
 
 func _on_Beatrix_spawn_timer_ended(position : Vector2) -> void:
 	if !spawned:
+		timer.start()
 		spawned = true
 		collision.disabled = false
 		show()
 		self.position = position
 		self.position.x = position.x - 480
 
+func _on_HikingScene_increased_difficulty() -> void:
+	speed += 25
 
-func _on_VisibilityNotifier2D_viewport_exited(viewport: Viewport) -> void:
+
+func _on_Timer_timeout() -> void:
 	spawned = false
 	hide()
 	self.position = initial_position

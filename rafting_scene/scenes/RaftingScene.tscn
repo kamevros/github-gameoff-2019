@@ -52,13 +52,13 @@ radius = 8.98689
 height = 29.2483
 
 [node name="RaftingScene" type="Node"]
-editor/display_folded = true
 script = ExtResource( 1 )
-seconds_to_play = 90
+seconds_to_play = 60
 
 [node name="TextTransitionScene" parent="." instance=ExtResource( 2 )]
 
 [node name="Canvas" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Background" type="ColorRect" parent="Canvas"]
 visible = false
@@ -87,6 +87,7 @@ align = 1
 autowrap = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 0, 480 )

@@ -47,3 +47,9 @@ var beatrix_end : String = """
 Age made Beatrix cautious and doubt led to fear, luckily she had a good friend to help her out of the woods.
 """
 
+func _process(delta: float) -> void:
+	
+	if Input.is_action_pressed("ui_page_down"):
+		remy_victory = true 
+		gustaf_victory = true 
+		beatrix_victory = true

@@ -1,50 +1,46 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://main_menu/scripts/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://main_menu/scenes/TextTransitionScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main_menu/assets/sounds/sovereign-quarter-by-kevin-macleod.ogg" type="AudioStream" id=3]
-[ext_resource path="res://assets/l0_camp.png" type="Texture" id=4]
-[ext_resource path="res://assets/l0_sign_0.png" type="Texture" id=5]
-[ext_resource path="res://assets/l0_tent_quechua_0.png" type="Texture" id=6]
-[ext_resource path="res://assets/l0_tent_quechua_2.png" type="Texture" id=7]
-[ext_resource path="res://assets/l0_title.png" type="Texture" id=8]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=9]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=10]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=11]
-[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=12]
-[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=13]
-[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=14]
-[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=15]
-[ext_resource path="res://assets/l0_selection_woods.png" type="Texture" id=16]
-[ext_resource path="res://assets/fonts/dynamic_font.tres" type="DynamicFont" id=17]
-[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=18]
-[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=19]
-[ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=20]
-[ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=21]
-[ext_resource path="res://assets/l0_selection_mountain.png" type="Texture" id=22]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=23]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=24]
-[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=25]
-[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=26]
-[ext_resource path="res://assets/l0_selection_river.png" type="Texture" id=27]
-[ext_resource path="res://assets/l0_river_completed.png" type="Texture" id=28]
-[ext_resource path="res://main_menu/scripts/RemyFlag.gd" type="Script" id=29]
-[ext_resource path="res://assets/l0_woods_completed.png" type="Texture" id=30]
-[ext_resource path="res://main_menu/scripts/BeatrixFlag.gd" type="Script" id=31]
-[ext_resource path="res://assets/l0_mountain_completed.png" type="Texture" id=32]
-[ext_resource path="res://main_menu/scenes/GustafFlag.gd" type="Script" id=33]
-[ext_resource path="res://assets/l0_pg_rest.png" type="Texture" id=34]
+[ext_resource path="res://main_menu/scenes/Night.tres" type="Texture" id=4]
+[ext_resource path="res://assets/l0_camp.png" type="Texture" id=5]
+[ext_resource path="res://assets/l0_sign_0.png" type="Texture" id=6]
+[ext_resource path="res://assets/l0_tent_quechua_0.png" type="Texture" id=7]
+[ext_resource path="res://assets/l0_tent_quechua_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/l0_title.png" type="Texture" id=9]
+[ext_resource path="res://main_menu/scenes/Star.tscn" type="PackedScene" id=10]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=11]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=12]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=13]
+[ext_resource path="res://assets/l0_campfire_off.png" type="Texture" id=14]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=15]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=16]
+[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=17]
+[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=18]
+[ext_resource path="res://assets/l0_selection_woods.png" type="Texture" id=19]
+[ext_resource path="res://assets/fonts/dynamic_font.tres" type="DynamicFont" id=20]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=21]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=22]
+[ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=23]
+[ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=24]
+[ext_resource path="res://assets/l0_selection_mountain.png" type="Texture" id=25]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=26]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=27]
+[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=28]
+[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=29]
+[ext_resource path="res://assets/l0_selection_river.png" type="Texture" id=30]
+[ext_resource path="res://assets/l0_river_completed.png" type="Texture" id=31]
+[ext_resource path="res://main_menu/scripts/RemyFlag.gd" type="Script" id=32]
+[ext_resource path="res://assets/l0_woods_completed.png" type="Texture" id=33]
+[ext_resource path="res://main_menu/scripts/BeatrixFlag.gd" type="Script" id=34]
+[ext_resource path="res://assets/l0_mountain_completed.png" type="Texture" id=35]
+[ext_resource path="res://main_menu/scenes/GustafFlag.gd" type="Script" id=36]
+[ext_resource path="res://assets/l0_pg_rest.png" type="Texture" id=37]
 
-[sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 0.0117647, 0.00392157, 0.172549, 1, 0.321569, 0, 0.121569, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-width = 480
-
-[sub_resource type="TileSet" id=3]
+[sub_resource type="TileSet" id=1]
 0/name = "l0_camp.png 0"
-0/texture = ExtResource( 4 )
+0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 144, 192 )
@@ -60,7 +56,7 @@ width = 480
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -89,59 +85,69 @@ void fragment()
     COLOR = vec4(tcol.rgb, tcol.a);
 }"
 
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/outLineSize = 0.05
+shader_param/alpha = 0.0
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
 [sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+shader = SubResource( 2 )
 shader_param/outLineSize = 0.05
 shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "idle",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "off",
 "speed": 5.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 4 )
-shader_param/outLineSize = 0.05
-shader_param/alpha = 0.0
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "default",
-"speed": 2.0
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
-"name": "idle",
-"speed": 2.0
-} ]
-
-[sub_resource type="SpriteFrames" id=9]
-animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "default",
+"name": "off",
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=10]
-animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="Shader" id=11]
+[sub_resource type="Shader" id=9]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -170,25 +176,25 @@ void fragment()
     COLOR = vec4(tcol.rgb, tcol.a);
 }"
 
-[sub_resource type="ShaderMaterial" id=12]
-shader = SubResource( 11 )
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
 shader_param/outLineSize = 0.05
 shader_param/alpha = 0.0
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
 } ]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=12]
 resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -203,7 +209,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=13]
 length = 1.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -218,58 +224,25 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 48, 48 ), Rect2( 48, 0, 48, 48 ), Rect2( 96, 0, 48, 48 ), Rect2( 0, 48, 48, 48 ), Rect2( 48, 48, 48, 48 ), Rect2( 96, 48, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 96, 96, 48, 48 ), Rect2( 0, 144, 48, 48 ), Rect2( 48, 144, 48, 48 ), Rect2( 96, 144, 48, 48 ) ]
 }
 
-[sub_resource type="ShaderMaterial" id=16]
-shader = SubResource( 11 )
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 9 )
 shader_param/outLineSize = 0.05
 shader_param/alpha = 0.0
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "idle",
-"speed": 2.0
-} ]
-
-[sub_resource type="Animation" id=18]
-length = 1.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 0, 0, 48, 48 ), Rect2( 48, 0, 48, 48 ), Rect2( 96, 0, 48, 48 ), Rect2( 0, 48, 48, 48 ), Rect2( 48, 48, 48, 48 ), Rect2( 96, 48, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 96, 96, 48, 48 ), Rect2( 0, 144, 48, 48 ), Rect2( 48, 144, 48, 48 ), Rect2( 96, 144, 48, 48 ) ]
-}
-
-[sub_resource type="ShaderMaterial" id=19]
-shader = SubResource( 11 )
-shader_param/outLineSize = 0.05
-shader_param/alpha = 0.0
-
-[sub_resource type="SpriteFrames" id=20]
-animations = [ {
 "frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
-"name": "default",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
 "name": "idle",
 "speed": 2.0
 } ]
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=16]
 length = 1.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -284,7 +257,40 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 48, 48 ), Rect2( 48, 0, 48, 48 ), Rect2( 96, 0, 48, 48 ), Rect2( 0, 48, 48, 48 ), Rect2( 48, 48, 48, 48 ), Rect2( 96, 48, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 96, 96, 48, 48 ), Rect2( 0, 144, 48, 48 ), Rect2( 48, 144, 48, 48 ), Rect2( 96, 144, 48, 48 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 9 )
+shader_param/outLineSize = 0.05
+shader_param/alpha = 0.0
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+} ]
+
+[sub_resource type="Animation" id=19]
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 48, 48 ), Rect2( 48, 0, 48, 48 ), Rect2( 96, 0, 48, 48 ), Rect2( 0, 48, 48, 48 ), Rect2( 48, 48, 48, 48 ), Rect2( 96, 48, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 0, 96, 48, 48 ), Rect2( 96, 96, 48, 48 ), Rect2( 0, 144, 48, 48 ), Rect2( 48, 144, 48, 48 ), Rect2( 96, 144, 48, 48 ) ]
+}
+
+[sub_resource type="Animation" id=20]
 resource_name = "waving"
 loop = true
 tracks/0/type = "value"
@@ -300,7 +306,7 @@ tracks/0/keys = {
 "values": [ Rect2( 2, 0, 46, 48 ), Rect2( 50, 0, 46, 48 ), Rect2( 2, 48, 46, 48 ), Rect2( 50, 48, 46, 48 ), Rect2( 2, 96, 46, 48 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=21]
 resource_name = "waving"
 loop = true
 tracks/0/type = "value"
@@ -316,7 +322,7 @@ tracks/0/keys = {
 "values": [ Rect2( 2, 0, 46, 48 ), Rect2( 2, 0, 46, 48 ), Rect2( 2, 0, 46, 48 ), Rect2( 2, 48, 46, 48 ), Rect2( 50, 48, 46, 48 ) ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=22]
 resource_name = "waving"
 loop = true
 tracks/0/type = "value"
@@ -332,7 +338,7 @@ tracks/0/keys = {
 "values": [ Rect2( 2, 0, 46, 48 ), Rect2( 50, 0, 46, 48 ), Rect2( 2, 48, 46, 48 ), Rect2( 50, 48, 46, 48 ) ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=23]
 resource_name = "waving"
 length = 1.5
 loop = true
@@ -351,10 +357,11 @@ tracks/0/keys = {
 
 [node name="MenuScene" type="Node"]
 pause_mode = 1
+editor/display_folded = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
-"_edit_vertical_guides_": [ 220.805 ]
+"_edit_vertical_guides_": [  ]
 }
 
 [node name="TextTransitionScene" parent="." instance=ExtResource( 2 )]
@@ -377,64 +384,121 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = SubResource( 2 )
+texture = ExtResource( 4 )
 stretch_mode = 2
 
 [node name="TileMap" type="TileMap" parent="Background"]
 z_index = -1
-tile_set = SubResource( 3 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 48, 48 )
 format = 1
 tile_data = PoolIntArray( 458752, 0, 1, 458753, 0, 0, 458754, 0, 1, 458755, 0, 0, 458756, 0, 0, 458757, 0, 196608, 458758, 0, 196609, 458759, 0, 196610, 458760, 0, 1, 458761, 0, 65536, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65538, 524291, 0, 65537, 524292, 0, 65538, 524293, 0, 65538, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65538, 524297, 0, 65538, 589824, 0, 131073, 589825, 0, 131073, 589826, 0, 131074, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131074, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131074, 589833, 0, 131073 )
 
 [node name="Sign" type="AnimatedSprite" parent="Background"]
-material = SubResource( 5 )
+material = SubResource( 3 )
 position = Vector2( 434.039, 359.971 )
 z_index = -1
-frames = SubResource( 6 )
+frames = SubResource( 4 )
 animation = "idle"
 
 [node name="Tent" type="AnimatedSprite" parent="Background"]
-material = SubResource( 7 )
+material = SubResource( 5 )
 position = Vector2( 346.024, 360 )
 z_index = -1
-frames = SubResource( 8 )
+frames = SubResource( 6 )
 animation = "idle"
 frame = 1
 playing = true
 flip_h = true
 
 [node name="Title" type="AnimatedSprite" parent="Background"]
-position = Vector2( 239.823, 217.361 )
+position = Vector2( 239.823, 182.984 )
 scale = Vector2( 0.569215, 0.569215 )
 z_index = -1
-frames = SubResource( 9 )
+frames = SubResource( 7 )
+
+[node name="Stars" type="Node2D" parent="Background"]
+editor/display_folded = true
+
+[node name="Star" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 38.0599, 127.685 )
+
+[node name="Star3" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 38.0599, 29.4658 )
+
+[node name="Star4" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 33.149, 229.587 )
+
+[node name="Star5" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 257.825, 85.9418 )
+
+[node name="Star6" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 303.252, 54.0205 )
+
+[node name="Star7" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 234.498, 24.5548 )
+
+[node name="Star9" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 384.282, 30.6935 )
+
+[node name="Star10" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 440.758, 83.4863 )
+
+[node name="Star11" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 245.548, 252.914 )
+
+[node name="Star21" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 450.58, 24.5548 )
+
+[node name="Star12" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 419.887, 127.685 )
+
+[node name="Star13" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 338.856, 109.269 )
+
+[node name="Star14" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 360.955, 279.925 )
+
+[node name="Star15" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 434.62, 238.182 )
+
+[node name="Star16" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 106.813, 49.1096 )
+
+[node name="Star18" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 78.5753, 266.419 )
+
+[node name="Star19" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 155.923, 241.865 )
+
+[node name="Star20" parent="Background/Stars" instance=ExtResource( 10 )]
+position = Vector2( 173.111, 109.269 )
 
 [node name="Characters" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 35, 0 )
 
 [node name="Fire" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 230, 360 )
-frames = SubResource( 10 )
-frame = 1
+frames = SubResource( 8 )
+frame = 2
 playing = true
 
 [node name="Beatrix" type="AnimatedSprite" parent="Characters"]
-material = SubResource( 12 )
+editor/display_folded = true
+material = SubResource( 10 )
 position = Vector2( 190, 360 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Beatrix"]
 root_node = NodePath("../BubbleWood")
-anims/idle = SubResource( 14 )
-anims/one_shot = SubResource( 15 )
+anims/idle = SubResource( 12 )
+anims/one_shot = SubResource( 13 )
 
 [node name="BubbleWood" type="Sprite" parent="Characters/Beatrix"]
 position = Vector2( 16.795, -34.4854 )
-texture = ExtResource( 16 )
+texture = ExtResource( 19 )
 region_enabled = true
 
 [node name="NameLabel" type="Label" parent="Characters/Beatrix"]
@@ -443,26 +507,27 @@ margin_left = -42.6984
 margin_top = 25.0
 margin_right = 47.3016
 margin_bottom = 64.585
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 20 )
 text = "Beatrix"
 align = 1
 
 [node name="Gustaf" type="AnimatedSprite" parent="Characters"]
-material = SubResource( 16 )
+editor/display_folded = true
+material = SubResource( 14 )
 position = Vector2( 270, 360 )
-frames = SubResource( 17 )
+frames = SubResource( 15 )
 frame = 1
 playing = true
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Gustaf"]
 root_node = NodePath("../BubbleMountain")
-anims/idle = SubResource( 14 )
-anims/one_shot = SubResource( 18 )
+anims/idle = SubResource( 12 )
+anims/one_shot = SubResource( 16 )
 
 [node name="BubbleMountain" type="Sprite" parent="Characters/Gustaf"]
 position = Vector2( 13.0995, -34.5505 )
-texture = ExtResource( 22 )
+texture = ExtResource( 25 )
 region_enabled = true
 region_rect = Rect2( 96, 144, 48, 48 )
 
@@ -472,24 +537,25 @@ margin_left = -47.0
 margin_top = 25.0
 margin_right = 34.8442
 margin_bottom = 66.0
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 20 )
 text = "Gustaf"
 align = 1
 
 [node name="Remy" type="AnimatedSprite" parent="Characters"]
-material = SubResource( 19 )
+editor/display_folded = true
+material = SubResource( 17 )
 position = Vector2( 163, 360 )
-frames = SubResource( 20 )
+frames = SubResource( 18 )
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/Remy"]
 root_node = NodePath("../BubbleRiver")
-anims/idle = SubResource( 14 )
-anims/one_shot = SubResource( 21 )
+anims/idle = SubResource( 12 )
+anims/one_shot = SubResource( 19 )
 
 [node name="BubbleRiver" type="Sprite" parent="Characters/Remy"]
 position = Vector2( -14.9169, -34.312 )
-texture = ExtResource( 27 )
+texture = ExtResource( 30 )
 region_enabled = true
 region_rect = Rect2( 48, 144, 48, 48 )
 
@@ -499,56 +565,57 @@ margin_left = -34.0
 margin_top = 25.0
 margin_right = 39.8616
 margin_bottom = 66.047
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 20 )
 text = "Remy"
 align = 1
 
 [node name="VictoryFlags" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -4, 0 )
 
 [node name="RemyFlag" type="Sprite" parent="VictoryFlags"]
 visible = false
 position = Vector2( 35, 360 )
-texture = ExtResource( 28 )
+texture = ExtResource( 31 )
 region_enabled = true
 region_rect = Rect2( 2, 48, 46, 48 )
-script = ExtResource( 29 )
+script = ExtResource( 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/RemyFlag"]
 autoplay = "waving"
-anims/waving = SubResource( 22 )
+anims/waving = SubResource( 20 )
 
 [node name="BeatrixFlag" type="Sprite" parent="VictoryFlags"]
 visible = false
 position = Vector2( 85, 360 )
-texture = ExtResource( 30 )
+texture = ExtResource( 33 )
 region_enabled = true
 region_rect = Rect2( 2, 0, 46, 48 )
-script = ExtResource( 31 )
+script = ExtResource( 34 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/BeatrixFlag"]
 autoplay = "waving"
-anims/waving = SubResource( 23 )
+anims/waving = SubResource( 21 )
 
 [node name="GustafFlag" type="Sprite" parent="VictoryFlags"]
 visible = false
 position = Vector2( 135, 360 )
-texture = ExtResource( 32 )
+texture = ExtResource( 35 )
 region_enabled = true
 region_rect = Rect2( 2, 0, 46, 48 )
-script = ExtResource( 33 )
+script = ExtResource( 36 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/GustafFlag"]
 autoplay = "waving"
-anims/waving = SubResource( 24 )
+anims/waving = SubResource( 22 )
 
 [node name="Zzz" type="Sprite" parent="VictoryFlags"]
 visible = false
 position = Vector2( 390.715, 345.129 )
-texture = ExtResource( 34 )
+texture = ExtResource( 37 )
 region_enabled = true
 region_rect = Rect2( 62, 36, 8, 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/Zzz"]
 autoplay = "waving"
-anims/waving = SubResource( 25 )
+anims/waving = SubResource( 23 )

@@ -6,7 +6,9 @@ var hiking_scene = "res://hiking_scene/scenes/HikingScene.tscn"
 var option_scene = "res://option_scene/scenes/OptionScene.tscn"
 var quit_scene = "res://quit_scene/scenes/QuitScene.tscn"
 
-export(int, 0, 4) var selector : int = 1
+onready var day = preload("res://main_menu/scenes/Day.tres")
+
+export(int, 0, 4) var selector : int = 0
 
 onready var beatrix_sprite : AnimatedSprite = $Characters/Beatrix as AnimatedSprite
 onready var gustaf_sprite : AnimatedSprite = $Characters/Gustaf as AnimatedSprite
@@ -15,11 +17,6 @@ onready var tent_sprite : AnimatedSprite = $Background/Tent as AnimatedSprite
 onready var sign_sprite : AnimatedSprite = $Background/Sign as AnimatedSprite
 
 onready var selector_dict = {
-	"sign" : {
-		"sprite" : sign_sprite,
-		"scene" : quit_scene,
-		"text" : null
-	},
 	"remy" : {
 		"sprite" : remy_sprite,
 		"scene" : rafting_scene,
@@ -34,22 +31,36 @@ onready var selector_dict = {
 		"sprite" : gustaf_sprite,
 		"scene" : climbing_scene,
 		"text" : "gustaf_begin"
+	},
+	"sign" : {
+		"sprite" : sign_sprite,
+		"scene" : quit_scene,
+		"text" : null
 	}
 }
 
 var second_counter : float = 0
+var victory : bool = false
 
 func _ready() -> void:
+	disable_quit_on_web_build()
+	hide_completed_minigame()
+	check_victory()
+	
+	if selector_dict.size() <= 0:
+		return
+		
 	for obj in selector_dict:
 		var sprite = selector_dict[obj].sprite
 		sprite.animation = "default"
 		if sprite.get_child_count() > 0:
 			sprite.get_child(0).set_current_animation("idle")
 			
-	disable_quit_on_web_build()
-	hide_completed_minigame()
-
+			
 func _process(delta : float) -> void:
+	if selector_dict.size() <= 0:
+		return
+		
 	second_counter += delta
 	var uniform_periodic = abs(cos(second_counter * 3))
 	
@@ -90,19 +101,27 @@ func _process(delta : float) -> void:
 			selector = 0
 			
 			
-func disable_quit_on_web_build():
-	if OS.has_feature('Javascript'):
+func disable_quit_on_web_build() -> void:
+	if OS.has_feature('JavaScript') || OS.has_feature('HTML5'):
 		selector_dict.erase("sign")
 		
 		
-func hide_completed_minigame():
-	if(globals.remy_victory):
+func hide_completed_minigame() -> void:
+	if globals.remy_victory:
 		selector_dict["remy"].sprite.hide()
 		selector_dict.erase("remy")
-	if(globals.beatrix_victory):
+	if globals.beatrix_victory:
 		selector_dict["beatrix"].sprite.hide()
 		selector_dict.erase("beatrix")
-	if(globals.gustaf_victory):
+	if globals.gustaf_victory:
 		selector_dict["gustaf"].sprite.hide()
 		selector_dict.erase("gustaf")
+		
+
+func check_victory():
+	if globals.remy_victory && globals.beatrix_victory && globals.gustaf_victory:
+		$Background/Stars.hide()
+		$Background/Gradient/TextureRect.texture = day
+		$Characters/Fire.play("off")
+		$Background/Tent.play("off")
 		

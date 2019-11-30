@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/3927-iron-horse-by-kevin-macleod.ogg-07a8d7b07c54e75cbb67b3b02b98ebcf.oggstr"
+
+[deps]
+
+source_file="res://climbing_scene/assets/sounds/3927-iron-horse-by-kevin-macleod.ogg"
+dest_files=[ "res://.import/3927-iron-horse-by-kevin-macleod.ogg-07a8d7b07c54e75cbb67b3b02b98ebcf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
