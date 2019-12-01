@@ -79,7 +79,7 @@ func get_input() -> Vector2:
 	
 func manage_terror(delta : float) -> void:
 	if moving:
-		terror += .5
+		terror += .3
 	elif terror > 0:
 		terror -= .5
 		
@@ -89,8 +89,13 @@ func manage_terror(delta : float) -> void:
 		_on_gameover()
 	elif terror > 50 && terror < 100:
 		speed = scared_speed
+		if !$Heartbeat.playing:
+			$Heartbeat.play()
 	else:
 		speed = normal_speed
+		
+	if terror == 0:
+		_on_Timer_timeout()
 		
 	emit_signal("terror_changed", terror)
 		

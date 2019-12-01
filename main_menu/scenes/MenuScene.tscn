@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://main_menu/scripts/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://main_menu/scenes/TextTransitionScene.tscn" type="PackedScene" id=2]
@@ -9,34 +9,35 @@
 [ext_resource path="res://assets/l0_tent_quechua_0.png" type="Texture" id=7]
 [ext_resource path="res://assets/l0_tent_quechua_2.png" type="Texture" id=8]
 [ext_resource path="res://assets/l0_title.png" type="Texture" id=9]
-[ext_resource path="res://main_menu/scenes/Star.tscn" type="PackedScene" id=10]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=11]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=12]
-[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=13]
-[ext_resource path="res://assets/l0_campfire_off.png" type="Texture" id=14]
-[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=15]
-[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=16]
-[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=17]
-[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=18]
-[ext_resource path="res://assets/l0_selection_woods.png" type="Texture" id=19]
-[ext_resource path="res://assets/fonts/dynamic_font.tres" type="DynamicFont" id=20]
-[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=21]
-[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=22]
-[ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=23]
-[ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=24]
-[ext_resource path="res://assets/l0_selection_mountain.png" type="Texture" id=25]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=26]
-[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=27]
-[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=28]
-[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=29]
-[ext_resource path="res://assets/l0_selection_river.png" type="Texture" id=30]
-[ext_resource path="res://assets/l0_river_completed.png" type="Texture" id=31]
-[ext_resource path="res://main_menu/scripts/RemyFlag.gd" type="Script" id=32]
-[ext_resource path="res://assets/l0_woods_completed.png" type="Texture" id=33]
-[ext_resource path="res://main_menu/scripts/BeatrixFlag.gd" type="Script" id=34]
-[ext_resource path="res://assets/l0_mountain_completed.png" type="Texture" id=35]
-[ext_resource path="res://main_menu/scenes/GustafFlag.gd" type="Script" id=36]
-[ext_resource path="res://assets/l0_pg_rest.png" type="Texture" id=37]
+[ext_resource path="res://assets/l0_ending.png" type="Texture" id=10]
+[ext_resource path="res://main_menu/scenes/Star.tscn" type="PackedScene" id=11]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_2.png" type="Texture" id=12]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_0.png" type="Texture" id=13]
+[ext_resource path="res://main_menu/assets/images/l0_campfire_on_flare_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/l0_campfire_off.png" type="Texture" id=15]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_0.png" type="Texture" id=16]
+[ext_resource path="res://main_menu/assets/images/p3_rabbit_sit_1.png" type="Texture" id=17]
+[ext_resource path="res://assets/p3_rabbit_idle_0.png" type="Texture" id=18]
+[ext_resource path="res://assets/p3_rabbit_idle_1.png" type="Texture" id=19]
+[ext_resource path="res://assets/l0_selection_woods.png" type="Texture" id=20]
+[ext_resource path="res://assets/fonts/dynamic_font.tres" type="DynamicFont" id=21]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_0.png" type="Texture" id=22]
+[ext_resource path="res://main_menu/assets/images/p0_goat_sit_1.png" type="Texture" id=23]
+[ext_resource path="res://assets/p0_goat_idle_0.png" type="Texture" id=24]
+[ext_resource path="res://assets/p0_goat_idle_1.png" type="Texture" id=25]
+[ext_resource path="res://assets/l0_selection_mountain.png" type="Texture" id=26]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_0.png" type="Texture" id=27]
+[ext_resource path="res://main_menu/assets/images/p2_mouse_sit_1.png" type="Texture" id=28]
+[ext_resource path="res://assets/p2_mouse_idle_0.png" type="Texture" id=29]
+[ext_resource path="res://assets/p2_mouse_idle_1.png" type="Texture" id=30]
+[ext_resource path="res://assets/l0_selection_river.png" type="Texture" id=31]
+[ext_resource path="res://assets/l0_river_completed.png" type="Texture" id=32]
+[ext_resource path="res://main_menu/scripts/RemyFlag.gd" type="Script" id=33]
+[ext_resource path="res://assets/l0_woods_completed.png" type="Texture" id=34]
+[ext_resource path="res://main_menu/scripts/BeatrixFlag.gd" type="Script" id=35]
+[ext_resource path="res://assets/l0_mountain_completed.png" type="Texture" id=36]
+[ext_resource path="res://main_menu/scenes/GustafFlag.gd" type="Script" id=37]
+[ext_resource path="res://assets/l0_pg_rest.png" type="Texture" id=38]
 
 [sub_resource type="TileSet" id=1]
 0/name = "l0_camp.png 0"
@@ -126,9 +127,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=24]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -136,12 +145,12 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "off",
 "speed": 5.0
@@ -183,12 +192,12 @@ shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -231,12 +240,12 @@ shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -264,12 +273,12 @@ shader_param/alpha = 0.0
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "default",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
@@ -357,7 +366,6 @@ tracks/0/keys = {
 
 [node name="MenuScene" type="Node"]
 pause_mode = 1
-editor/display_folded = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -415,63 +423,69 @@ flip_h = true
 position = Vector2( 239.823, 182.984 )
 scale = Vector2( 0.569215, 0.569215 )
 z_index = -1
-frames = SubResource( 7 )
+frames = SubResource( 24 )
+
+[node name="End" type="AnimatedSprite" parent="Background"]
+visible = false
+position = Vector2( 239.823, 243.001 )
+scale = Vector2( 1.18461, 1.18461 )
+z_index = -1
+frames = SubResource( 25 )
 
 [node name="Stars" type="Node2D" parent="Background"]
-editor/display_folded = true
 
-[node name="Star" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 38.0599, 127.685 )
 
-[node name="Star3" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star3" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 38.0599, 29.4658 )
 
-[node name="Star4" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star4" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 33.149, 229.587 )
 
-[node name="Star5" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star5" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 257.825, 85.9418 )
 
-[node name="Star6" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star6" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 303.252, 54.0205 )
 
-[node name="Star7" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star7" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 234.498, 24.5548 )
 
-[node name="Star9" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star9" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 384.282, 30.6935 )
 
-[node name="Star10" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star10" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 440.758, 83.4863 )
 
-[node name="Star11" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star11" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 245.548, 252.914 )
 
-[node name="Star21" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star21" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 450.58, 24.5548 )
 
-[node name="Star12" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star12" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 419.887, 127.685 )
 
-[node name="Star13" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star13" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 338.856, 109.269 )
 
-[node name="Star14" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star14" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 360.955, 279.925 )
 
-[node name="Star15" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star15" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 434.62, 238.182 )
 
-[node name="Star16" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star16" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 106.813, 49.1096 )
 
-[node name="Star18" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star18" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 78.5753, 266.419 )
 
-[node name="Star19" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star19" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 155.923, 241.865 )
 
-[node name="Star20" parent="Background/Stars" instance=ExtResource( 10 )]
+[node name="Star20" parent="Background/Stars" instance=ExtResource( 11 )]
 position = Vector2( 173.111, 109.269 )
 
 [node name="Characters" type="Node2D" parent="."]
@@ -480,7 +494,6 @@ position = Vector2( 35, 0 )
 [node name="Fire" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 230, 360 )
 frames = SubResource( 8 )
-frame = 2
 playing = true
 
 [node name="Beatrix" type="AnimatedSprite" parent="Characters"]
@@ -498,7 +511,7 @@ anims/one_shot = SubResource( 13 )
 
 [node name="BubbleWood" type="Sprite" parent="Characters/Beatrix"]
 position = Vector2( 16.795, -34.4854 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 region_enabled = true
 
 [node name="NameLabel" type="Label" parent="Characters/Beatrix"]
@@ -507,7 +520,7 @@ margin_left = -42.6984
 margin_top = 25.0
 margin_right = 47.3016
 margin_bottom = 64.585
-custom_fonts/font = ExtResource( 20 )
+custom_fonts/font = ExtResource( 21 )
 text = "Beatrix"
 align = 1
 
@@ -527,7 +540,7 @@ anims/one_shot = SubResource( 16 )
 
 [node name="BubbleMountain" type="Sprite" parent="Characters/Gustaf"]
 position = Vector2( 13.0995, -34.5505 )
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 region_enabled = true
 region_rect = Rect2( 96, 144, 48, 48 )
 
@@ -537,7 +550,7 @@ margin_left = -47.0
 margin_top = 25.0
 margin_right = 34.8442
 margin_bottom = 66.0
-custom_fonts/font = ExtResource( 20 )
+custom_fonts/font = ExtResource( 21 )
 text = "Gustaf"
 align = 1
 
@@ -555,7 +568,7 @@ anims/one_shot = SubResource( 19 )
 
 [node name="BubbleRiver" type="Sprite" parent="Characters/Remy"]
 position = Vector2( -14.9169, -34.312 )
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 region_enabled = true
 region_rect = Rect2( 48, 144, 48, 48 )
 
@@ -565,7 +578,7 @@ margin_left = -34.0
 margin_top = 25.0
 margin_right = 39.8616
 margin_bottom = 66.047
-custom_fonts/font = ExtResource( 20 )
+custom_fonts/font = ExtResource( 21 )
 text = "Remy"
 align = 1
 
@@ -576,10 +589,10 @@ position = Vector2( -4, 0 )
 [node name="RemyFlag" type="Sprite" parent="VictoryFlags"]
 visible = false
 position = Vector2( 35, 360 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 region_enabled = true
 region_rect = Rect2( 2, 48, 46, 48 )
-script = ExtResource( 32 )
+script = ExtResource( 33 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/RemyFlag"]
 autoplay = "waving"
@@ -588,10 +601,10 @@ anims/waving = SubResource( 20 )
 [node name="BeatrixFlag" type="Sprite" parent="VictoryFlags"]
 visible = false
 position = Vector2( 85, 360 )
-texture = ExtResource( 33 )
+texture = ExtResource( 34 )
 region_enabled = true
 region_rect = Rect2( 2, 0, 46, 48 )
-script = ExtResource( 34 )
+script = ExtResource( 35 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/BeatrixFlag"]
 autoplay = "waving"
@@ -600,10 +613,10 @@ anims/waving = SubResource( 21 )
 [node name="GustafFlag" type="Sprite" parent="VictoryFlags"]
 visible = false
 position = Vector2( 135, 360 )
-texture = ExtResource( 35 )
+texture = ExtResource( 36 )
 region_enabled = true
 region_rect = Rect2( 2, 0, 46, 48 )
-script = ExtResource( 36 )
+script = ExtResource( 37 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VictoryFlags/GustafFlag"]
 autoplay = "waving"
@@ -612,7 +625,7 @@ anims/waving = SubResource( 22 )
 [node name="Zzz" type="Sprite" parent="VictoryFlags"]
 visible = false
 position = Vector2( 390.715, 345.129 )
-texture = ExtResource( 37 )
+texture = ExtResource( 38 )
 region_enabled = true
 region_rect = Rect2( 62, 36, 8, 10 )
 

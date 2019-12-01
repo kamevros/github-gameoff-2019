@@ -120,6 +120,7 @@ func hide_completed_minigame() -> void:
 
 func check_victory():
 	if globals.remy_victory && globals.beatrix_victory && globals.gustaf_victory:
+		$Background/End.show()
 		$Background/Stars.hide()
 		$Background/Gradient/TextureRect.texture = day
 		$Characters/Fire.play("off")
